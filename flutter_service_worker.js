@@ -3,42 +3,61 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "71a71704664dcacb897dbce6fafac587",
-"index.html": "dc03c3b14971ff66ad814b179d197756",
-"/": "dc03c3b14971ff66ad814b179d197756",
-"main.dart.js": "04dbc58a28fb6321a231ba111b0a912d",
+  "version.json": "5dbb859f472c6c61fd76ac58f50137a7",
+"index.html": "9152019eac393732672808fbaf413444",
+"/": "9152019eac393732672808fbaf413444",
+"main.dart.js": "c88c281066943c9da1e924078416795d",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "848ca50c0fbead8a46c65dabcb5bbda6",
-"assets/AssetManifest.json": "c481ec0d0a6792b0e7374c566a70357a",
-"assets/NOTICES": "951302343cfb8d4f5dfd79ecb4a500d2",
+"manifest.json": "a405820efbeb558f1d839c4d1e418474",
+"assets/AssetManifest.json": "ab637ece2bf16a09054b39ea85a579c8",
+"assets/NOTICES": "56ed7f85e09d63be7ae6e43642d0caae",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/packages/awesome_snackbar_content/assets/types/warning.svg": "cfcc5fcb570129febe890f2e117615e0",
-"assets/packages/awesome_snackbar_content/assets/types/failure.svg": "cb9e759ee55687836e9c1f20480dd9c8",
-"assets/packages/awesome_snackbar_content/assets/types/success.svg": "6e273a8f41cd45839b2e3a36747189ac",
-"assets/packages/awesome_snackbar_content/assets/types/help.svg": "7fb350b5c30bde7deeb3160f591461ff",
-"assets/packages/awesome_snackbar_content/assets/back.svg": "ba1c3aebba280f23f5509bd42dab958d",
-"assets/packages/awesome_snackbar_content/assets/bubbles.svg": "1df6817bf509ee4e615fe821bc6dabd9",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
-"assets/assets/logo.png": "c0518d603546d10333e45dcc6e3e6c02",
-"assets/assets/logo2.png": "45091f8592c122aa4fb2a4a3ac51f2cb",
-"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
-"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
-"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
-"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba"
+"assets/shaders/ink_sparkle.frag": "80d27e0a4b558f6e8a743307dabda370",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
+"assets/assets/images/plp_old.png": "0374c44d6865454ecf1d53042919b100",
+"assets/assets/images/orders_old.png": "dd0cdd76e5e99a56d4ac655332e72e07",
+"assets/assets/images/description_old.png": "10a2c4bbe063216aa1bdbb6d9513ed2c",
+"assets/assets/images/login.png": "90f3aa5d1e07889d6396e4c57ae9ed04",
+"assets/assets/images/cart.png": "406336b1c45c97faa786fe71e79c977d",
+"assets/assets/images/clothing_old.png": "fb080d1b25c263ce2998fa416db796a0",
+"assets/assets/images/plp.png": "486cc2615442abdb8af146db9bcb5679",
+"assets/assets/images/review.png": "7d2e3762a3a42f523fa29d83a2ce9589",
+"assets/assets/images/register.png": "c2470f969d188232183087f0249a061e",
+"assets/assets/images/accounts_old.png": "3e64119c72216582f317b29e082539b9",
+"assets/assets/images/home.png": "10aa66251fa5827ce0ab20ca814dd341",
+"assets/assets/images/login_old.png": "e8fcd928eddaf59afe7eb12667d2ce7f",
+"assets/assets/images/register_old.png": "33dfbd578949297f7ab39541320b02da",
+"assets/assets/images/cart_old.png": "8f6f36a35ca230e12400ead914060edb",
+"assets/assets/images/fmcg.png": "4aa63ee63eb64b7ea6a1897e6fda3091",
+"assets/assets/images/home_old.png": "8b0eb9d3c7c8e7894245a98ea1b2d19a",
+"assets/assets/images/accounts.png": "e83ecd13d092b3bb81b9bf5f2320859e",
+"assets/assets/images/electronics.png": "486cc2615442abdb8af146db9bcb5679",
+"assets/assets/images/app_ranking.png": "3e43b6bb7a0a1a75723138e577fde395",
+"assets/assets/images/description.png": "9abd6a8cdc5990cbd92a07f77db6fa53",
+"assets/assets/images/pdp_old.png": "d8020dfce12102f6818bbb4d259d072d",
+"assets/assets/images/new.png": "e6401f30bbdf31f106c13db9c4159f85",
+"assets/assets/images/track_old.png": "66e2706a37c1947a7a1674b1620a573c",
+"assets/assets/images/pdp.png": "8004616999662166a89bf1bcc96f0af9",
+"assets/assets/images/clothing.png": "53489fb3257171faaf94883fbc5f0eaf",
+"assets/assets/images/coupon.png": "c32cf56d39480dc9b95318f2982c7bd6",
+"assets/assets/images/review_old.png": "c66e9c90aa265114d1fe2b08a2e4de79",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62"
 };
 
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
-"main.dart.js",
+  "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -137,9 +156,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })
