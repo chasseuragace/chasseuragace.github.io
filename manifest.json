@@ -1,11 +1,11 @@
 {
-    "name": "okr_plain",
-    "short_name": "okr_plain",
+    "name": "facebooklogin_test",
+    "short_name": "facebooklogin_test",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "okr",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
