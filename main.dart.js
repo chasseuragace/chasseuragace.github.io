@@ -64587,7 +64587,7 @@ return A.bm(s,A.oF(A.bm(B.cs,A.Fz(!1,new A.at(25,25,25,25),s,s,!0,s,s,!1,s,s,!1,
 $S:401}
 A.uk.prototype={
 aj(){var s=t.N,r=t.z
-return new A.KK(A.a([A.ar(["label","label 1 example","value",0.2,"id","oid"],s,r),A.ar(["label","lx2","value",0.2,"id","oid"],s,r),A.ar(["label","l3","value",0.2,"id","oid"],s,r),A.ar(["label","l4","value",0.4,"id","oid"],s,r)],t.gG),A.a([A.ar(["value","Bottom up","key","bottom_up"],s,s),A.ar(["value","Initiative Based","key","ini"],s,s),A.ar(["value","Key Result Based","key","kpi"],s,s)],t.SN),A.a(["Weekly","Monthly"],t.s),B.l)}}
+return new A.KK(A.a([A.ar(["label","label 1 example","value",0.2,"id","oid"],s,r),A.ar(["label","l","value",0.2,"id","oid"],s,r),A.ar(["label","lx3","value",0.2,"id","oid"],s,r),A.ar(["label","l4","value",0.4,"id","oid"],s,r)],t.gG),A.a([A.ar(["value","Bottom up","key","bottom_up"],s,s),A.ar(["value","Initiative Based","key","ini"],s,s),A.ar(["value","Key Result Based","key","kpi"],s,s)],t.SN),A.a(["Weekly","Monthly"],t.s),B.l)}}
 A.KK.prototype={
 gku(){var s=this.r
 return s==null?B.b.gG(this.w):s},
