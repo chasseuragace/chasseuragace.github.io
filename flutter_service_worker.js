@@ -4,9 +4,10 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "5dbb859f472c6c61fd76ac58f50137a7",
-"index.html": "7ec7a5f9175fd9183a1f085eca06113d",
-"/": "7ec7a5f9175fd9183a1f085eca06113d",
-"main.dart.js": "53cffc95dc843f6ee755e5be88c9e6d9",
+"index.html": "c20e0be6354e03027d4dfd661fbe156f",
+"/": "c20e0be6354e03027d4dfd661fbe156f",
+"main.dart.js": "bba3397f06399a7c11b3418f79df39b3",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
@@ -36,7 +37,11 @@ const RESOURCES = {
 "assets/assets/images/okr/deletedInitiative.png": "a533589fb946cc599939017bdadfab68",
 "assets/assets/images/okr/deletedKeyResult.png": "4f8e1f257f721fab95f99edb2df4f20e",
 "assets/assets/images/okr/updatedObjective.png": "05eba58486391f1e30bd8901a70c3338",
-"assets/assets/images/okr/updatedCheckin.png": "65dd834181a2273c41474ea424442a33"
+"assets/assets/images/okr/updatedCheckin.png": "65dd834181a2273c41474ea424442a33",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62"
 };
 
 // The application shell files that are downloaded before a service worker can
