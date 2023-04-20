@@ -4,10 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "5cf2118b77b5042e6c118b701fb50186",
-"index.html": "6749a88aa2705db7de93baff5e91fdc6",
-"/": "6749a88aa2705db7de93baff5e91fdc6",
-"main.dart.js": "951faaa0ea11da85ebfe382070fe01d1",
-"flutter.js": "1cfe996e845b3a8a33f57607e8b09ee4",
+"index.html": "13a55c7cd724c97814de05102e94b403",
+"/": "13a55c7cd724c97814de05102e94b403",
+"main.dart.js": "3d97f6fc3006dbc6d3d3ec6bbffa1556",
 "favicon.png": "757f508e5a01b4afc923d997bce008a9",
 "icons/favicon-16x16.png": "43ba63f9677808d1714bfb483f5da592",
 "icons/favicon.ico": "2ac2c3ba7b03711456277fb4ade09bf3",
@@ -74,11 +73,7 @@ const RESOURCES = {
 "assets/assets/images/IMG_error_checkout.png": "4cb0bfb9ec10fbb007be7666326055ac",
 "assets/assets/images/facebook.png": "9fe3b7eaafbfcd83caa803a9d9f07811",
 "assets/assets/images/IMG_success.png": "3f0952c6a41c109c70f64528967c85bd",
-"assets/assets/images/coupon.png": "a783c410d6da9d156f095411637e3e13",
-"canvaskit/canvaskit.js": "97937cb4c2c2073c968525a3e08c86a3",
-"canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
-"canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
-"canvaskit/canvaskit.wasm": "3de12d898ec208a5f31362cc00f09b9e"
+"assets/assets/images/coupon.png": "a783c410d6da9d156f095411637e3e13"
 };
 
 // The application shell files that are downloaded before a service worker can
