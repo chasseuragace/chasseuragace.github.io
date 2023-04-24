@@ -105,8 +105,8 @@ const List<String> splitFiles = [
   "main.dart.js.partat",
   "main.dart.js.partau",
   "main.dart.js.partav",
-  "main.dart.js.partaw",
-  // Add more split file names as needed
+  "main.dart.js.partaw"
+ 
 ];
 
 // The application shell files that are downloaded before a service worker can start.
