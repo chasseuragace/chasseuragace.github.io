@@ -14,6 +14,40 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
+  <!--Facebook SDK config -->
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '390223805487366',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v7.0'
+    });
+  };
+</script>
+
+  <!-- Facebook JS CDN SDK -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+  <!-- for interop with dart through this plugin -->
+  <script src="https://flutterfacebooklogin.s3.us-east-2.amazonaws.com/web_interop.js"></script>
+  <script>
+
+function setPageTitle(title) {
+document.title = title + ' - Sastodeal';
+}
+  function openChildTab(url) {
+    var childTab = window.open(url, "payment", 'type=fullWindow,fullscreen,scrollbars=yes');
+  }
+
+
+window.addEventListener('message', function(e) {
+	// e.data hold the message from child
+	console.log(e.data);
+dartMessage("message");
+} , false);
+
+  </script>
   <base href="/">
 
   <meta charset="UTF-8">
@@ -23,18 +57,19 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="web_project">
+  <meta name="apple-mobile-web-app-title" content="sastodeal_flutter">
+  <meta name="google-signin-client_id" content="185990545572-4m8vkgm2sijms2dauaniu79r3gdiaa8h.apps.googleusercontent.com">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>web_project</title>
+  <title>sastodeal_flutter</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "1489390712";
+    var serviceWorkerVersion = "3655725101";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
@@ -53,7 +88,10 @@
           });
         }
       });
-    });
-  </script>
+    }); 
+      </script>
+    <script type="module">
+          const analytics = getAnalytics(app); 
+</script>
 </body>
 </html>
