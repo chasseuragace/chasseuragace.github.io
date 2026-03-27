@@ -12,6 +12,7 @@ const S = {
   bgBorder: "#222222",
   textPrimary: "#F0EDE6",
   textSecondary: "#888880",
+  textMid: "#666660",
   textGhost: "#333330",
   accent: "#C8A96E",
   accentDim: "#7A6340",
@@ -291,7 +292,7 @@ function ProblemSection() {
 
               <div style={{ height: "1px", background: S.bgBorder, marginBottom: "24px" }} />
 
-              <p style={{ fontFamily: S.mono, fontSize: "11px", letterSpacing: "0.04em", color: S.textGhost, lineHeight: 1.6 }}>
+              <p style={{ fontFamily: S.mono, fontSize: "11px", letterSpacing: "0.04em", color: S.textSecondary, lineHeight: 1.6 }}>
                 {content.problem.footnote}
               </p>
             </ScrollReveal>
@@ -401,7 +402,7 @@ function StageCard({ stage, index, lineInView }: { stage: typeof content.process
           marginBottom: "20px",
         }}
       />
-      <p style={{ fontFamily: S.mono, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: S.textGhost, marginBottom: "12px" }}>
+      <p style={{ fontFamily: S.mono, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: S.textMid, marginBottom: "12px" }}>
         {stage.number}
       </p>
       <h3 style={{ fontFamily: S.serif, fontSize: "18px", color: S.textPrimary, marginBottom: "12px", lineHeight: 1.2 }}>
@@ -460,7 +461,7 @@ function SystemSection() {
                   <p style={{ fontFamily: S.mono, fontSize: "14px", lineHeight: 1.75, color: S.textSecondary, marginBottom: "20px" }}>
                     {card.body}
                   </p>
-                  <p style={{ fontFamily: S.mono, fontSize: "11px", color: S.textGhost, letterSpacing: "0.04em" }}>
+                  <p style={{ fontFamily: S.mono, fontSize: "11px", color: S.textSecondary, letterSpacing: "0.04em" }}>
                     {card.footer}
                   </p>
                 </div>
@@ -596,7 +597,7 @@ function MemberCard({ member }: { member: typeof content.trio.members[0] }) {
               borderRadius: "2px",
               fontFamily: S.mono,
               fontSize: "11px",
-              color: S.textGhost,
+              color: S.textMid,
               letterSpacing: "0.06em",
             }}
           >
@@ -763,7 +764,7 @@ function CTASection({ onBookClick }: { onBookClick: () => void }) {
             {content.cta.button}
           </button>
 
-          <p style={{ fontFamily: S.mono, fontSize: "12px", color: S.textGhost }}>
+          <p style={{ fontFamily: S.mono, fontSize: "12px", color: S.textSecondary }}>
             {content.cta.footnote}
           </p>
         </ScrollReveal>

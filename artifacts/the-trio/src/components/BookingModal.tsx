@@ -251,7 +251,7 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
                   {content.modal.submitButton}
                 </button>
 
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#333330", textAlign: "center", marginTop: "16px" }}>
+                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#888880", textAlign: "center", marginTop: "16px" }}>
                   {content.modal.confirmMessage}
                 </p>
               </form>
