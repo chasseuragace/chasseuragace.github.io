@@ -145,32 +145,50 @@
       {
         "label": "Domain-Driven Design · Evans, 2003",
         "claim": "Domain expertise through structured collaboration",
-        "body": "Developers who become domain experts are the most effective builders. The intake session is knowledge crunching — and it ends when the Trio knows the domain."
+        "body": "Developers who become domain experts are the most effective builders. The intake session is knowledge crunching — and it ends when the Trio knows the domain.",
+        "source": "Eric Evans' official DDD resource hub — the primary home for the methodology.",
+        "link": "https://www.domainlanguage.com/ddd/",
+        "linkLabel": "domainlanguage.com/ddd →"
       },
       {
         "label": "Jobs-to-Be-Done · Christensen, Harvard",
         "claim": "The real need behind the stated requirement",
-        "body": "Clients are experts in their own experience. They are not experts in the solution space. The Trio excavates the job beneath the requirement — and builds for that."
+        "body": "Clients are experts in their own experience. They are not experts in the solution space. The Trio excavates the job beneath the requirement — and builds for that.",
+        "source": "Original peer-reviewed article published by Harvard Business Review, September 2016.",
+        "link": "https://hbr.org/2016/09/know-your-customers-jobs-to-be-done",
+        "linkLabel": "hbr.org — Know Your Customers' Jobs →"
       },
       {
         "label": "Double Diamond · British Design Council, 2005",
         "claim": "Problem definition is half the work",
-        "body": "Teams that define the right problem before building produce better outcomes. The Trio's intake is the first diamond — run before most teams start theirs."
+        "body": "Teams that define the right problem before building produce better outcomes. The Trio's intake is the first diamond — run before most teams start theirs.",
+        "source": "The Design Council's own page for their own framework. Nothing more authoritative exists.",
+        "link": "https://www.designcouncil.org.uk/our-resources/the-double-diamond/",
+        "linkLabel": "designcouncil.org.uk →"
       },
       {
         "label": "Lean Startup · Ries, 2011",
         "claim": "The prototype is a hypothesis, not a promise",
-        "body": "The parallel build during intake is not a bet on correct requirements. It is the Build-Measure-Learn loop run at the intake stage — making the alignment conversation concrete."
+        "body": "The parallel build during intake is not a bet on correct requirements. It is the Build-Measure-Learn loop run at the intake stage — making the alignment conversation concrete.",
+        "source": "Eric Ries' official Lean Startup methodology page — the principles, in full, for free.",
+        "link": "https://theleanstartup.com/principles",
+        "linkLabel": "theleanstartup.com/principles →"
       },
       {
         "label": "The Trusted Advisor · Maister, Green & Galford",
         "claim": "Trust is earned through demonstrated competence",
-        "body": "Trustworthiness = (Credibility + Reliability + Intimacy) ÷ Self-Orientation. The intake system is designed to address all four variables directly."
+        "body": "Trustworthiness = (Credibility + Reliability + Intimacy) ÷ Self-Orientation. The intake system is designed to address all four variables directly.",
+        "source": "The Trust Equation — explained in full on the authors' own firm's website.",
+        "link": "https://trustedadvisor.com/why-trust-matters/understanding-trust/understanding-the-trust-equation",
+        "linkLabel": "trustedadvisor.com — Trust Equation →"
       },
       {
         "label": "Agentic Coding Trends · Anthropic, 2026",
         "claim": "Small teams with agentic tools outperform large teams",
-        "body": "One engineer can now maintain systems that previously required teams. The Trio's architecture — Lead, Apprentice, Brute — is designed around this reality."
+        "body": "One engineer can now maintain systems that previously required teams. The Trio's architecture — Lead, Apprentice, Brute — is designed around this reality.",
+        "source": "Anthropic's official 2026 Agentic Coding Trends Report. Note: download requires an email.",
+        "link": "https://resources.anthropic.com/2026-agentic-coding-trends-report",
+        "linkLabel": "anthropic.com — 2026 Trends Report →"
       }
     ]
   },

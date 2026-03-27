@@ -3,6 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Nav } from "../components/Nav";
 import { BookingModal } from "../components/BookingModal";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { FrameworkCard } from "../components/FrameworkCard";
 import content from "../data/content.json";
 
 const S = {
@@ -648,23 +649,7 @@ function FrameworksSection() {
             const delay = row * 0.1 + col * 0.06;
             return (
               <ScrollReveal key={tile.label} delay={delay}>
-                <div
-                  style={{
-                    background: S.bgCard,
-                    border: `1px solid ${S.bgBorder}`,
-                    padding: "28px",
-                  }}
-                >
-                  <p style={{ fontFamily: S.mono, fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: S.accent, marginBottom: "12px" }}>
-                    {tile.label}
-                  </p>
-                  <h3 style={{ fontFamily: S.serif, fontSize: "16px", color: S.textPrimary, marginBottom: "12px", lineHeight: 1.3 }}>
-                    {tile.claim}
-                  </h3>
-                  <p style={{ fontFamily: S.mono, fontSize: "13px", lineHeight: 1.65, color: S.textSecondary }}>
-                    {tile.body}
-                  </p>
-                </div>
+                <FrameworkCard tile={tile} />
               </ScrollReveal>
             );
           })}

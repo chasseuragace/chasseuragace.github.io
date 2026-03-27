@@ -1,0 +1,80 @@
+Here are all six sources with their best direct URLs — primary sources wherever they exist, readable alternatives where the primary requires a purchase.
+
+---
+
+**Domain-Driven Design · Evans, 2003**
+
+| Purpose | URL |
+|---|---|
+| Official DDD resource hub (Evans' own domain) | https://www.domainlanguage.com/ddd/ |
+| O'Reilly book page (publisher) | https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/ |
+| Free manuscript PDF (April 2003 final draft) | https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf |
+| Amazon | https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215 |
+
+Best link for the site: **domainlanguage.com/ddd** — it's Evans' own home for the work, signals you're pointing to the source, not a retailer.
+
+---
+
+**Jobs-to-Be-Done · Christensen, Harvard**
+
+| Purpose | URL |
+|---|---|
+| Original HBR article (Sept 2016) | https://hbr.org/2016/09/know-your-customers-jobs-to-be-done |
+| Harvard Business School faculty page | https://www.hbs.edu/faculty/Pages/item.aspx?num=51553 |
+| HBS Online explainer (accessible, free) | https://online.hbs.edu/blog/post/jobs-to-be-done-examples |
+
+Best link for the site: **hbr.org/2016/09/know-your-customers-jobs-to-be-done** — the original peer-reviewed article, published by Harvard Business Review. Maximum credibility.
+
+---
+
+**Double Diamond · British Design Council, 2005**
+
+| Purpose | URL |
+|---|---|
+| Official Design Council page | https://www.designcouncil.org.uk/our-resources/the-double-diamond/ |
+| History of the Double Diamond | https://www.designcouncil.org.uk/our-resources/the-double-diamond/history-of-the-double-diamond/ |
+| Framework for Innovation (parent framework) | https://www.designcouncil.org.uk/our-resources/framework-for-innovation/ |
+| Wikipedia | https://en.wikipedia.org/wiki/Double_Diamond_(design_process_model) |
+
+Best link for the site: **designcouncil.org.uk/our-resources/the-double-diamond/** — the institution's own page for their own framework. Nothing more authoritative exists.
+
+---
+
+**Lean Startup · Ries, 2011**
+
+| Purpose | URL |
+|---|---|
+| Official Lean Startup methodology page | https://theleanstartup.com/principles |
+| Official site (homepage) | https://theleanstartup.com |
+| Amazon book | https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898 |
+| Wikipedia | https://en.wikipedia.org/wiki/Lean_startup |
+
+Best link for the site: **theleanstartup.com/principles** — Eric Ries' own official methodology page. Authoritative, free, readable.
+
+---
+
+**The Trusted Advisor · Maister, Green & Galford**
+
+| Purpose | URL |
+|---|---|
+| Official Trusted Advisor Associates page (book) | https://trustedadvisor.com/books/the-trusted-advisor |
+| Trust Equation — official explainer | https://trustedadvisor.com/why-trust-matters/understanding-trust/understanding-the-trust-equation |
+| Simon & Schuster (publisher, 20th anniversary edition) | https://www.simonandschuster.com/books/The-Trusted-Advisor-20th-Anniversary-Edition/David-H-Maister/9781982157104 |
+| Amazon | https://www.amazon.com/Trusted-Advisor-David-H-Maister/dp/0743212347 |
+
+Best link for the site: **trustedadvisor.com/why-trust-matters/understanding-trust/understanding-the-trust-equation** — this is the trust equation page on the authors' own firm's website. Links directly to the concept being cited, not just the book.
+
+---
+
+**Agentic Coding Trends · Anthropic, 2026**
+
+| Purpose | URL |
+|---|---|
+| Official report landing page | https://resources.anthropic.com/2026-agentic-coding-trends-report |
+| Full PDF (direct) | https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf |
+
+Best link for the site: **resources.anthropic.com/2026-agentic-coding-trends-report** — the official Anthropic page. Note: it requires an email to download. If you want the tile to link to the PDF directly without a gate, use the PDF link. Your call on which friction level suits the audience.
+
+---
+
+One note worth flagging: the Anthropic report link is gated behind an email form. For a landing page tile that should feel frictionless, I'd either link to the PDF directly or acknowledge in the UI that the link downloads a report — so visitors aren't surprised.
