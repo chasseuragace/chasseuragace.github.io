@@ -1,0 +1,1010 @@
+important : take clean architecture into consideration , use json for data source 
+# The Trio — Landing Page UI/UX & Storytelling Specification
+### React Frontend · Complete Implementation Guide
+
+---
+
+## 0. Document Purpose
+
+This spec is written for an AI agent building a React frontend.
+It covers: narrative arc, section-by-section copy + UX intent,
+interaction design, visual design system, component behavior,
+and motion rules. Read it top to bottom before writing a single line.
+
+---
+
+## 1. Design Philosophy & Aesthetic Direction
+
+### 1.1 The Tone: Refined Confidence
+
+The Trio is not a startup. It is not a big agency. It is three people
+who are better than most teams of twenty, and they know it — without
+performing it. The aesthetic must feel like that.
+
+Reference points: Pentagram's website. Linear's product site.
+A good hospital's admission form. A good law firm's letterhead.
+**Nothing flashy. Everything precise.**
+
+The one thing a visitor must remember: *these people think before they build.*
+
+---
+
+### 1.2 Aesthetic Decision
+
+**Direction: Editorial Minimalism with Kinetic Typography**
+
+- Dark background. Off-white text. One accent color.
+- Oversized, deliberate typographic moments at section entrances.
+- Every animation is purposeful — it reveals something, it doesn't decorate.
+- Whitespace is used with intent, not default. Sections breathe.
+- No stock imagery. No hero illustration. No gradients as decoration.
+  Geometry only. Type only. Motion only.
+
+**The metaphor that drives every design decision:**
+A surgeon's table. Nothing unnecessary. Everything at hand. Total control.
+
+---
+
+### 1.3 Color System
+
+```css
+:root {
+  /* Backgrounds */
+  --bg-primary:      #0A0A0A;   /* Near-black — primary canvas */
+  --bg-surface:      #111111;   /* Slightly lifted surface */
+  --bg-card:         #161616;   /* Card/module backgrounds */
+  --bg-border:       #222222;   /* Borders and dividers */
+
+  /* Typography */
+  --text-primary:    #F0EDE6;   /* Warm off-white — main text */
+  --text-secondary:  #888880;   /* Muted — supporting text */
+  --text-ghost:      #333330;   /* Very muted — decorative/numbers */
+
+  /* Accent — used sparingly, maximum impact */
+  --accent:          #C8A96E;   /* Warm gold — the one color that matters */
+  --accent-dim:      #7A6340;   /* Dimmed gold — hover states */
+
+  /* Functional */
+  --success:         #4A7C59;
+  --error:           #8B3A3A;
+}
+```
+
+**Rules:**
+- The gold accent appears on: active states, key headings that need
+  weight, the single CTA button, hover underlines.
+- Never use it decoratively. Use it to mark importance.
+- No gradients except a single subtle radial on the hero section.
+
+---
+
+### 1.4 Typography System
+
+```
+Display font:  "DM Serif Display" (Google Fonts)
+               — Used for section titles, pull quotes, hero heading
+               — Gives intellectual weight, editorial authority
+
+Body font:     "DM Mono" (Google Fonts)
+               — Used for body text, labels, metadata
+               — Signals precision, technical credibility
+               — Unexpected choice for body — creates character
+
+Accent font:   "DM Serif Display" italic
+               — For pull quotes and the narrative callouts
+```
+
+**Why DM Mono for body:** Most consultancy sites use a humanist sans
+(Inter, Neue Haas, etc). DM Mono reads as a team that thinks in code —
+it implies specificity, rigor, and technical honesty. The serif display
+for headings balances it with intellectual weight.
+
+```css
+/* Scale — use only these sizes */
+--text-hero:   clamp(56px, 8vw, 96px);
+--text-title:  clamp(32px, 4vw, 52px);
+--text-section:clamp(22px, 2.5vw, 32px);
+--text-body:   16px;
+--text-small:  13px;
+--text-label:  11px; /* letter-spacing: 0.12em; text-transform: uppercase; */
+
+/* Line heights */
+--lh-display:  1.05;
+--lh-title:    1.15;
+--lh-body:     1.75;
+```
+
+---
+
+### 1.5 Motion System
+
+```
+Philosophy: Reveal, don't decorate.
+Every animation answers: "what does the user now understand
+that they didn't before this motion?"
+
+Durations:
+  --dur-instant:   80ms   (feedback: button clicks)
+  --dur-fast:      200ms  (hover transitions)
+  --dur-standard:  400ms  (section reveals, fades)
+  --dur-slow:      700ms  (hero entrance, large type reveals)
+  --dur-cinematic: 1200ms (staggered sequences only)
+
+Easing:
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1)   (entries — fast start, soft settle)
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1)       (exits)
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1) (interactive elements, slight overshoot)
+
+Rules:
+  - All scroll-triggered animations use IntersectionObserver.
+  - Use Framer Motion for React. Do not use CSS @keyframes for complex
+    sequences — use Framer's variants system for choreography.
+  - Respect prefers-reduced-motion: wrap all motion in a useReducedMotion check.
+  - No looping animations on the visible page. Motion should stop when complete.
+    (Exception: the hero section cursor element — one subtle pulse, then stop.)
+```
+
+---
+
+## 2. Page Architecture — The Narrative Arc
+
+The page is a story. The visitor is the protagonist.
+They arrive with a problem. They leave with a solution.
+
+```
+ACT 1 — THE HOOK
+  Section 1: Nav (persistent)
+  Section 2: Hero — "The Statement"
+
+ACT 2 — THE PROBLEM (mirror the client's reality back to them)
+  Section 3: "Most Teams Build the Wrong Thing"
+
+ACT 3 — THE SYSTEM (what the Trio actually does)
+  Section 4: "How It Works" — the 5 stages
+  Section 5: "The Intelligence" — the AI system
+
+ACT 4 — THE PEOPLE (who they actually are)
+  Section 6: "The Trio" — the three profiles
+
+ACT 5 — THE PROOF (grounding)
+  Section 7: "Grounded In" — the framework wall
+
+ACT 6 — THE INVITATION
+  Section 8: "Book a Session" — the single CTA
+  Section 9: Footer
+```
+
+**Scroll behavior:** Single-page. All sections stacked vertically.
+Standard scroll — no scroll-jacking. Let the browser scroll naturally.
+Use scroll-triggered reveals for content. Do NOT use forced full-screen
+snapping — it fights the user.
+
+---
+
+## 3. Section-by-Section Specification
+
+---
+
+### SECTION 1: Navigation
+
+**Type:** Persistent sticky top bar
+
+**Behavior:**
+- Transparent at page load
+- On scroll past 80px: background becomes `--bg-surface` with
+  `backdrop-filter: blur(12px)` and a 1px bottom border (`--bg-border`)
+- Smooth transition: 300ms ease
+
+**Layout:**
+```
+[  TRIO  ]                    [  Book a Session →  ]
+  wordmark                         CTA button
+```
+
+**Wordmark:** "TRIO" in DM Serif Display, 18px, `--text-primary`.
+No tagline in nav. Just the name.
+
+**CTA Button:**
+- Border: 1px solid `--accent`
+- Background: transparent
+- Text: "Book a Session →" in DM Mono, 12px, `--accent`
+- On hover: background fills with `--accent`, text becomes `--bg-primary`
+- Transition: `--dur-fast`
+
+**No other nav links.** The page is a single narrative — no menu
+breaks the story. The only decision the visitor makes is: scroll or book.
+
+---
+
+### SECTION 2: Hero — "The Statement"
+
+**Storytelling intent:**
+State the position before explaining it. The client should feel
+slightly challenged — "wait, say that again" — and keep scrolling.
+
+**Layout:** Full viewport height. Vertically centered text. Left-aligned.
+
+**Content:**
+
+```
+[label — small caps, --text-secondary]
+Product Intelligence & Execution
+
+[hero heading — DM Serif Display, --text-hero]
+You bring the insight.
+We deliver the
+right product.
+
+[body — DM Mono, 16px, --text-secondary, max-width: 480px]
+A few structured conversations with the Trio and the system
+does the rest — research, validation, prototype, and a product
+direction you can trust.
+
+[CTA]
+[ Book a Session → ]    [ See How It Works ↓ ]
+  (primary button)          (ghost link)
+```
+
+**Visual treatment:**
+- Subtle radial gradient centered on heading area:
+  `radial-gradient(ellipse 60% 50% at 30% 50%, rgba(200,169,110,0.05) 0%, transparent 70%)`
+- No image. No illustration. Type is the hero.
+- A single thin horizontal rule below the body text, 80px wide, `--accent`.
+  Animates in after the text: draws from 0px to 80px width in 600ms.
+
+**Entrance animation:**
+```
+1. Label fades up (0 → 1 opacity, 0 → -12px translateY) — 0ms delay
+2. Line 1 of heading fades up — 100ms delay
+3. Line 2 of heading fades up — 200ms delay
+4. Line 3 of heading fades up — 300ms delay
+5. Body paragraph — 450ms delay
+6. Buttons — 600ms delay
+7. Gold rule draws in — 700ms delay
+Total entrance: ~900ms, feels deliberate not rushed
+```
+
+**Scroll indicator:** At bottom of hero, a small downward chevron
+in `--text-ghost`. Disappears after scrolling 20% of viewport height.
+
+---
+
+### SECTION 3: "Most Teams Build the Wrong Thing"
+
+**Storytelling intent:**
+This is the mirror. Show the client their current reality —
+not to insult it, but to make them feel understood.
+This is where they think: "this is about me."
+
+**Layout:** Full-width. Two-column on desktop, stacked on mobile.
+Left: The Problem. Right: The Trio's answer (brief, not full).
+
+**Headline:**
+```
+[DM Serif Display, --text-title]
+Most teams build
+what's requested.
+```
+
+**Problem column — a three-part list, each item fades in on scroll:**
+
+```
+Item 1:
+  [number — --text-ghost, DM Mono, 72px, absolutely positioned]
+  01
+  [label — DM Mono, --text-secondary, 11px uppercase]
+  The Requirement Problem
+  [body — 15px, --text-primary]
+  Clients know their domain. They do not know what product will
+  serve that domain best. The requirement is always a hypothesis —
+  often a good one, rarely the final answer.
+
+Item 2:
+  02
+  The Translation Problem
+  Between the client's intent and the development team lies a gap.
+  Meetings, tickets, misunderstandings, rework. Most of the waste
+  in software projects lives in this gap.
+
+Item 3:
+  03
+  The Timing Problem
+  By the time most teams discover the product direction was wrong,
+  months have passed. The prototype comes after the contract,
+  not before it.
+```
+
+**Right column — The contrast:**
+```
+[DM Serif Display italic, --accent, larger font ~24px]
+"The Trio works differently."
+
+[body — --text-secondary]
+The intake session is not requirement gathering.
+It is domain research. By the time it concludes,
+the Trio knows your space — well enough to prescribe.
+
+[thin rule — --bg-border, full width of column]
+
+[small text — --text-ghost, DM Mono, 11px]
+Grounded in Evans' Domain-Driven Design,
+Christensen's Jobs-to-Be-Done, and the British
+Design Council's Double Diamond framework.
+```
+
+**Visual accent:** Behind the large numbers (01, 02, 03),
+a very subtle grain texture or nothing — the numbers alone
+create enough visual texture at 72px weight.
+
+---
+
+### SECTION 4: "How It Works" — The 5 Stages
+
+**Storytelling intent:**
+Now that the problem is established, show the system.
+This is the product demo — not of software, but of process.
+It should feel like watching a machine work.
+
+**Layout:** Full-width section. Heading centered.
+Below: horizontal timeline on desktop (5 stages side by side),
+vertical stacked list on mobile.
+
+**Section label:** "The Process"
+**Section heading:**
+```
+From first contact
+to working product.
+```
+
+**Timeline — 5 stage cards:**
+
+Each card:
+- Background: `--bg-card`
+- Border: 1px `--bg-border`
+- On hover: border becomes 1px `--accent`, slight `translateY(-4px)`
+- Transition: `--dur-fast`
+- Top: stage number in `--text-ghost`, DM Mono, 11px uppercase
+- Bold title: DM Serif Display, 18px
+- Body: DM Mono, 13px, `--text-secondary`, line-height 1.6
+
+```
+Card 1:
+  STAGE 01
+  Intelligent Outreach
+  Before you reach us, the system is already working.
+  Ad framings, positioning signals, and market context —
+  continuously refined.
+
+Card 2:
+  STAGE 02
+  Structured Intake
+  You book. You provide context. The system immediately begins
+  domain research and produces a briefing document for the Trio —
+  before the first session.
+
+Card 3:
+  STAGE 03
+  Deep Sessions
+  A small number of high-value conversations. The Trio clarifies,
+  challenges, and expands. The goal is clarity — not prolonged discussion.
+  The system supports in real time.
+
+Card 4:
+  STAGE 04
+  Parallel Build
+  While sessions happen, prototypes are materializing. The domain
+  model is made concrete. By alignment, a working demo exists.
+
+Card 5:
+  STAGE 05
+  Convergence
+  Requirements finalize. Demo is ready. Product direction is clear.
+  Next steps are obvious. Not because we were lucky — because the
+  process was designed this way.
+```
+
+**Animation:** Cards stagger in from below on scroll.
+Delay: 0ms, 80ms, 160ms, 240ms, 320ms per card.
+Each: `opacity 0→1`, `translateY 24px→0`.
+
+**Stage connector line:** Between cards on desktop, a thin horizontal
+line in `--bg-border` with a small gold dot at each connection point.
+The line "draws" from left to right as the section enters the viewport —
+animate the `width` of a pseudo-element from 0 to 100% in 800ms.
+
+---
+
+### SECTION 5: "The Intelligence" — The AI System
+
+**Storytelling intent:**
+Most teams claim AI. Show specifically what it does here, not in the abstract.
+This section should feel like a system diagram, not a marketing claim.
+
+**Layout:** Dark card, full width, asymmetric.
+Left: description. Right: visual schema (not an actual chart —
+a typographic diagram using monospaced text grid to suggest a pipeline).
+
+**Section label:** "The System"
+**Heading:**
+```
+Two products.
+One intelligence.
+```
+
+**Two columns — side by side cards:**
+
+```
+Card A: Internal Use
+  [label — --accent, DM Mono, 11px uppercase]
+  The Trio → Market
+
+  [body]
+  The system knows the Trio's backgrounds, past work, and market signals.
+  It generates positioning strategies and advertisement framings that the
+  Trio can brainstorm against — sharpening the message through dialogue
+  with the system itself.
+
+  [footer line — --text-ghost, 11px]
+  This is how you found us.
+
+Card B: Client Use
+  [label — --accent, DM Mono, 11px uppercase]
+  Client Product → Market
+
+  [body]
+  Once a product is being built, the same capability is instantiated fresh
+  for the client's domain. It does not reuse the Trio's logic — it rebuilds
+  from the client's market context, target users, and the job the product
+  does. The result: the product is not just built. It is introduced correctly.
+
+  [footer line — --text-ghost, 11px]
+  Your product, positioned from day one.
+```
+
+**Visual schema (right side — desktop only):**
+A monospaced ASCII-style pipeline rendered as styled HTML:
+
+```
+┌─────────────────────────┐
+│  CLIENT INTAKE           │
+│  domain context          │
+│  constraints + goals     │
+└──────────┬──────────────┘
+           │
+     ┌─────▼──────┐
+     │  AI SYSTEM  │
+     │  research   │
+     │  synthesis  │
+     │  modeling   │
+     └─────┬───────┘
+           │
+    ┌──────▼──────┐   ┌──────────────┐
+    │  THE TRIO   │◄──│  DOMAIN      │
+    │  sessions   │   │  EXPERTISE   │
+    │  + build    │   │  (emergent)  │
+    └──────┬──────┘   └──────────────┘
+           │
+    ┌──────▼──────┐
+    │  PRODUCT    │
+    │  + market   │
+    │  framing    │
+    └─────────────┘
+```
+
+Style this as DM Mono text in `--text-ghost`, with key labels in
+`--text-secondary`. The box-drawing characters create structure without
+using a diagram library. It reads as a system schema — technical and honest.
+
+---
+
+### SECTION 6: "The Trio" — The Three Profiles
+
+**Storytelling intent:**
+Now the visitor knows the system. Who operates it?
+Show the people — but not as bios. As roles with edges.
+Each profile should feel like a character sketch, not a LinkedIn card.
+
+**Layout:** Three equal-width columns on desktop.
+Each: a vertical card. Stacked on mobile.
+
+**Section label:** "The People"
+**Heading:**
+```
+Three roles.
+One unit.
+```
+
+**Profile Card Structure:**
+
+```css
+/* Card base */
+background: --bg-surface;
+border: 1px solid --bg-border;
+padding: 40px 32px;
+position: relative;
+```
+
+Each card has a thin top border in `--accent` (2px) — the only strong
+color on these cards. The rest is type.
+
+```
+Card 1: The Lead
+
+  [role — DM Mono, --text-secondary, 11px uppercase, letter-spacing: 0.12em]
+  The Lead
+
+  [title — DM Serif Display, 26px, --text-primary]
+  System Architect
+
+  [divider — 1px --bg-border, full card width]
+
+  [body — DM Mono, 14px, --text-secondary, line-height: 1.7]
+  Thinks in systems before he thinks in code. The Lead's role is
+  conceptual integrity — ensuring that what gets built reflects
+  reality accurately, not just what the client requested.
+
+  He is the primary knowledge cruncher in every intake session.
+  The one who, by the session's end, can say with confidence:
+  this is what you need, and this is why.
+
+  [tag row — small pills, --bg-border border, --text-ghost text]
+  [ Domain Modeling ]  [ Architecture ]  [ Philosophy ]
+
+Card 2: The Apprentice
+
+  The Apprentice
+  Integrator
+
+  Lives at the intersection of classical and agentic development.
+  He has written production code in the traditional sense and
+  orchestrated AI agents in the new sense — and crucially,
+  understands the difference between them.
+
+  The Apprentice ensures that the Lead's domain model survives
+  contact with implementation, and that the Brute's output meets
+  the standard the model requires.
+
+  [ Agentic Systems ]  [ Integration ]  [ Technical Judgment ]
+
+Card 3: The Brute
+
+  The Brute
+  Executor
+
+  No vocabulary of classical programming. Total fluency in
+  AI-native execution. Given a specification, the Brute owns
+  the process of producing it — rapidly, reliably, using the
+  full capability of agentic development tools.
+
+  Primarily: UI, interaction, and frontend. With specification
+  from the Lead or Apprentice: backend and infrastructure.
+  This scope expands as the tools do.
+
+  [ UI Execution ]  [ Agentic Build ]  [ Output Speed ]
+```
+
+**Hover state on cards:** A very subtle glow — `box-shadow: 0 0 40px rgba(200,169,110,0.06)`.
+Not dramatic. Just alive.
+
+**Together line — centered below the three cards:**
+```
+[DM Serif Display italic, --text-secondary, 18px]
+"Three complementary capabilities.
+ One position. One product."
+```
+
+---
+
+### SECTION 7: "Grounded In" — The Framework Wall
+
+**Storytelling intent:**
+The Trio's claims are not invented. They are the intersection
+of frameworks that have already proved themselves. This section
+builds intellectual trust without being academic.
+
+**Layout:** A clean grid of reference tiles. 3×2 on desktop.
+
+**Section label:** "The Foundation"
+**Heading:**
+```
+Every claim we make
+is grounded.
+```
+
+**Subheading — DM Mono, --text-secondary, 16px:**
+```
+We did not invent these ideas. We are the first team
+operating all of them simultaneously, at agentic speed.
+```
+
+**Six framework tiles:**
+
+Each tile:
+- Background: `--bg-card`
+- Border: 1px `--bg-border`
+- No hover effect — these are static references, not interactive
+
+```
+Tile 1:
+  [label — --accent, DM Mono, 10px uppercase]
+  Domain-Driven Design · Evans, 2003
+
+  [claim — DM Serif Display, 16px]
+  Domain expertise through structured collaboration
+
+  [body — DM Mono, 13px, --text-secondary]
+  Developers who become domain experts are the most effective
+  builders. The intake session is knowledge crunching — and
+  it ends when the Trio knows the domain.
+
+Tile 2:
+  Jobs-to-Be-Done · Christensen, Harvard
+
+  The real need behind the stated requirement
+
+  Clients are experts in their own experience. They are not
+  experts in the solution space. The Trio excavates the job
+  beneath the requirement — and builds for that.
+
+Tile 3:
+  Double Diamond · British Design Council, 2005
+
+  Problem definition is half the work
+
+  Teams that define the right problem before building produce
+  better outcomes. The Trio's intake is the first diamond —
+  run before most teams start theirs.
+
+Tile 4:
+  Lean Startup · Ries, 2011
+
+  The prototype is a hypothesis, not a promise
+
+  The parallel build during intake is not a bet on correct
+  requirements. It is the Build-Measure-Learn loop run at the
+  intake stage — making the alignment conversation concrete.
+
+Tile 5:
+  The Trusted Advisor · Maister, Green & Galford
+
+  Trust is earned through demonstrated competence
+
+  Trustworthiness = (Credibility + Reliability + Intimacy)
+  ÷ Self-Orientation. The intake system is designed
+  to address all four variables directly.
+
+Tile 6:
+  Agentic Coding Trends · Anthropic, 2026
+
+  Small teams with agentic tools outperform large teams
+
+  One engineer can now maintain systems that previously required
+  teams. The Trio's architecture — Lead, Apprentice, Brute —
+  is designed around this reality.
+```
+
+**Animation:** Tiles fade in on scroll in a staggered 2×3 grid pattern —
+top row first, then bottom row. Each tile: 60ms offset from previous.
+
+---
+
+### SECTION 8: "Book a Session" — The CTA
+
+**Storytelling intent:**
+The pitch is complete. This is the close. It should feel
+like a natural ending, not a sales push. Calm. Clear. Inevitable.
+
+**Layout:** Full-width dark section. Centered text. Single action.
+
+**Radial gradient:** Very subtle, warm, centered:
+`radial-gradient(ellipse 50% 70% at 50% 50%, rgba(200,169,110,0.08) 0%, transparent 70%)`
+
+**Content:**
+```
+[section label — --text-ghost, DM Mono, 11px uppercase]
+Ready
+
+[heading — DM Serif Display, --text-title]
+A few conversations.
+A working product.
+
+[body — DM Mono, 16px, --text-secondary, max-width: 520px, centered]
+Book a session with the Trio. You'll provide context.
+We'll prepare. By the time we meet, the system has already
+begun working on your problem.
+
+[CTA button — large, prominent]
+[ Book a Session → ]
+
+Styling:
+  - Background: --accent
+  - Text: --bg-primary (near-black on gold)
+  - Font: DM Mono, 14px
+  - Padding: 18px 48px
+  - Border-radius: 2px (very slight — not rounded, not sharp)
+  - On hover: background --accent-dim, scale(1.02)
+  - Transition: --dur-fast, --ease-snap
+
+[footnote — DM Mono, 12px, --text-ghost, centered]
+No retainer. No discovery fee. One focused engagement.
+```
+
+**Booking flow — what happens when they click:**
+- Opens a modal (not a new page)
+- Modal contains a minimal form:
+  - Name (text input)
+  - Email (text input)
+  - "What are you working on?" (textarea — 4 rows)
+  - "Where is it at?" (single select:
+    [ Idea / Early thinking / Something built / Existing product ])
+  - Submit button: "Send Context →"
+- Below submit: "We'll respond within 24 hours with a calendar link."
+- Modal background: `--bg-surface`, border: 1px `--bg-border`
+- Form inputs: dark background `--bg-primary`, border `--bg-border`,
+  focus: 1px `--accent`. DM Mono text.
+- No multi-step wizard. One clean form. Minimal friction.
+
+---
+
+### SECTION 9: Footer
+
+**Layout:** Full width, minimal. Two rows.
+
+```
+Row 1 — three columns:
+  Left:    TRIO wordmark (same as nav)
+  Center:  "Product Intelligence & Execution"
+           DM Mono, --text-ghost, 12px
+  Right:   [ Book a Session → ] (same ghost button as nav)
+
+Row 2 — full width, centered, --text-ghost, 11px, DM Mono:
+  © 2026 The Trio · Built with the same system we sell
+```
+
+The footer copy "Built with the same system we sell" is intentional.
+It closes the loop — the landing page itself was produced using the
+Trio's AI + agentic workflow.
+
+---
+
+## 4. Responsive Design Rules
+
+**Breakpoints:**
+```
+mobile:  < 640px
+tablet:  640px – 1024px
+desktop: > 1024px
+```
+
+**Section-specific responsive rules:**
+
+| Section | Desktop | Tablet | Mobile |
+|---|---|---|---|
+| Hero | Left-aligned, 50% width heading | Left-aligned, 70% width | Full width, centered |
+| Problem | 2-column | 2-column | Stacked |
+| Stages | 5 cards horizontal | 3+2 grid | Stacked vertical list |
+| System | 2-column | 2-column | Stacked, schema hidden |
+| Trio | 3-column | 3-column | Stacked |
+| Frameworks | 3×2 grid | 2×3 grid | 1×6 stacked |
+| CTA | Centered 60% width | Centered 80% | Full width |
+
+**Typography scaling:** Use `clamp()` for all display and title sizes.
+Body text stays at 16px on all breakpoints — do not reduce it on mobile.
+
+---
+
+## 5. Component Specifications
+
+### 5.1 ScrollReveal Component
+
+Wrap all scroll-triggered content in this behavior:
+
+```jsx
+// Behavior spec — implement with Framer Motion
+// Initial state: opacity: 0, y: 24
+// Animate to: opacity: 1, y: 0
+// Trigger: when element is 15% inside the viewport
+// Duration: 0.5s ease-out
+// Once: true (does not re-trigger on scroll up)
+```
+
+### 5.2 Stage Card (Process section)
+
+```jsx
+// Hover: border-color → --accent, translateY(-4px)
+// Transition: 200ms ease-out
+// Gold connector dot between cards — 6px circle, --accent fill
+```
+
+### 5.3 Nav Component
+
+```jsx
+// useScrollPosition hook: triggers at 80px scroll
+// Transition: background opacity 0→1, backdrop-filter 0→blur(12px)
+// Duration: 300ms
+```
+
+### 5.4 Booking Modal
+
+```jsx
+// Trigger: CTA button click
+// Open animation: scale(0.96)→scale(1), opacity 0→1, 200ms ease-out
+// Backdrop: rgba(0,0,0,0.7), blur(4px)
+// Close: Escape key, backdrop click, close button (top-right ×)
+// Focus trap inside modal when open (accessibility)
+// Form validation: inline, on submit. No per-field validation while typing.
+```
+
+### 5.5 Tag Pills (Trio section)
+
+```css
+/* Tag pill */
+display: inline-block;
+padding: 4px 10px;
+border: 1px solid var(--bg-border);
+border-radius: 2px;
+font-family: DM Mono;
+font-size: 11px;
+color: var(--text-ghost);
+letter-spacing: 0.06em;
+```
+
+---
+
+## 6. Accessibility Requirements
+
+- All interactive elements: visible focus ring (2px `--accent` outline, 2px offset)
+- Color contrast: `--text-primary` on `--bg-primary` → WCAG AA minimum
+- Booking modal: focus trap, escape to close, aria-modal="true"
+- `prefers-reduced-motion`: all animations disabled / reduced to simple opacity fade
+- All section headings: proper `h1/h2/h3` hierarchy (h1 = hero only)
+- Images: none used. No alt text needed.
+- Booking form: all inputs labeled, errors announced via aria-live
+
+---
+
+## 7. Page Metadata & SEO
+
+```html
+<title>The Trio — Product Intelligence & Execution</title>
+<meta name="description"
+  content="A few structured conversations. A working product.
+  The Trio combines human reasoning, AI synthesis, and agentic
+  execution to deliver products that are correct, not just complete." />
+<meta property="og:title" content="The Trio" />
+<meta property="og:description"
+  content="You bring the insight. We deliver the right product." />
+<!-- og:image: a dark card with "TRIO" in DM Serif Display, centered -->
+```
+
+---
+
+## 8. Implementation Stack Guidance
+
+```
+Framework:     React (Vite or Next.js)
+Styling:       CSS Modules or Tailwind (custom config only — do not use
+               default Tailwind colors or shadows, override with the
+               design system above)
+Animation:     Framer Motion (preferred) or CSS transitions for simple states
+Fonts:         Google Fonts — DM Serif Display + DM Mono
+               Load both weights: 400 regular, 400 italic (DM Serif Display)
+               400 regular, 500 medium (DM Mono)
+Form:          React Hook Form (minimal, no UI library)
+Modal:         Headless UI Dialog or custom implementation
+Scroll:        IntersectionObserver API (native — no library needed)
+Icons:         None. Use typographic symbols (→ ↓ × ┌ ┐) in DM Mono.
+Images:        None in initial version.
+```
+
+**Do not install:** Any component library (MUI, Chakra, Shadcn, etc).
+Build everything from spec. The character of the site lives in the details.
+
+---
+
+## 9. The One Test
+
+When the implementation is complete, apply this test:
+
+Open the page. Scroll from top to bottom in 90 seconds.
+Ask: *do I understand what these people do, why they are different,
+and why I would trust them — without having read a single word carefully?*
+
+If yes: the design is working.
+If no: the visual hierarchy is broken — fix it before the copy.
+
+The page should be comprehensible at the level of layout alone.
+Copy makes it credible. Design makes it undeniable.
+
+---
+
+## 10. Copy — Complete Reference
+
+All final copy is consolidated here for the agent's reference.
+Copy above may have been abbreviated. This is the canonical text.
+
+```
+NAV:
+  Wordmark: TRIO
+  CTA: Book a Session →
+
+HERO:
+  Label: Product Intelligence & Execution
+  Heading line 1: You bring the insight.
+  Heading line 2: We deliver the
+  Heading line 3: right product.
+  Body: A few structured conversations with the Trio and the system
+        does the rest — research, validation, prototype, and a product
+        direction you can trust.
+  CTA 1: Book a Session →
+  CTA 2: See How It Works ↓
+
+PROBLEM SECTION:
+  Heading: Most teams build / what's requested.
+  01 / The Requirement Problem / Clients know their domain. They do not know
+       what product will serve that domain best. The requirement is always a
+       hypothesis — often a good one, rarely the final answer.
+  02 / The Translation Problem / Between the client's intent and the
+       development team lies a gap. Meetings, tickets, misunderstandings,
+       rework. Most of the waste in software projects lives in this gap.
+  03 / The Timing Problem / By the time most teams discover the product
+       direction was wrong, months have passed. The prototype comes after
+       the contract, not before it.
+  Pull quote: "The Trio works differently."
+  Pull quote body: The intake session is not requirement gathering.
+                   It is domain research. By the time it concludes, the Trio
+                   knows your space — well enough to prescribe.
+  Footnote: Grounded in Evans' Domain-Driven Design, Christensen's
+            Jobs-to-Be-Done, and the British Design Council's Double Diamond.
+
+PROCESS SECTION:
+  Label: The Process
+  Heading: From first contact / to working product.
+  (Stage cards as specified in Section 4 above)
+
+SYSTEM SECTION:
+  Label: The System
+  Heading: Two products. / One intelligence.
+  (Cards as specified in Section 5 above)
+
+TRIO SECTION:
+  Label: The People
+  Heading: Three roles. / One unit.
+  Closing quote: "Three complementary capabilities. One position. One product."
+
+FRAMEWORKS SECTION:
+  Label: The Foundation
+  Heading: Every claim we make / is grounded.
+  Subheading: We did not invent these ideas. We are the first team
+              operating all of them simultaneously, at agentic speed.
+
+CTA SECTION:
+  Label: Ready
+  Heading: A few conversations. / A working product.
+  Body: Book a session with the Trio. You'll provide context. We'll prepare.
+        By the time we meet, the system has already begun working on your problem.
+  Button: Book a Session →
+  Footnote: No retainer. No discovery fee. One focused engagement.
+
+FOOTER:
+  Wordmark: TRIO
+  Subtitle: Product Intelligence & Execution
+  Copyright: © 2026 The Trio · Built with the same system we sell
+```
+
+---
+
+*Spec version: 1.0*
+*Status: Ready for implementation*
+*Companion document: trio_system_foundation.md (the philosophical grounding)*
+
+
+On the aesthetic direction — editorial minimalism with kinetic typography
+In 2025, minimalist landing pages embraced softer, subdued color schemes — monochromatic tones that reduce visual noise and enhance focus on essential elements like CTAs and headlines. Fabiofumarola But the research also shows the competitive signal: the brands that win in 2025 are not the ones with the fanciest graphics — they are the ones who understand their audience on a deeper level: how they think, how they scroll, and what makes them pause. @hgraca The Trio's audience is technical and skeptical. They do not pause for decoration. They pause for precision. Hence: dark background, DM Mono body font, gold accent used once per section.
+On the narrative architecture — scroll as chapter structure
+Scrollytelling achieves up to 400% higher engagement than static content by using scroll position to control story progression, trigger animations, and reveal content progressively. Harvard Business Review The spec structures the page as six acts precisely because scrollytelling allows you to control the narrative — unveiling information at just the right moments to build curiosity and maintain engagement. Fullstory The visitor's job is to keep scrolling because each section resolves the tension of the one before it.
+On the copy's challenge-first approach
+Effective software development landing pages frame benefit around growth rather than merely staffing — and every element should be a functional demonstration of attention to detail and UX philosophy. UXPin The "Most Teams Build the Wrong Thing" section does this: it mirrors the client's current pain before offering the alternative, which is the structural pattern that converts readers into believers.
+On the booking form's radical simplicity
+Great landing pages combine clarity, purpose, and performance — guiding the visitor through a journey and removing friction so people feel confident taking the next step. GitHub A single-page modal with four fields and no multi-step flow is the execution of that principle. The Trio does not need a 12-question onboarding form. They need context + intent. Four fields covers it.
+The three decisions that give the spec its character: DM Mono as body font (signals technical rigor, breaks convention), the ASCII pipeline schema in the system section (shows the process without an animation library), and the footer line "Built with the same system we sell" (closes the loop on the whole philosophy without saying it directly).

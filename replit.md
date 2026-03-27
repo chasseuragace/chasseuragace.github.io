@@ -16,6 +16,20 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### `artifacts/the-trio` (`@workspace/the-trio`)
+
+The Trio landing page — a full editorial minimalist landing page built in React + Vite.
+
+- Serves at: `/` (root preview path)
+- Stack: React, Framer Motion, react-hook-form, DM Serif Display + DM Mono (Google Fonts)
+- Architecture: Clean — all page content lives in `src/data/content.json`; no hardcoded strings in components
+- Sections: Nav, Hero, Problem, Process (5 stages), AI System, The Trio (3 profiles), Frameworks (6 tiles), CTA, Footer
+- Includes a booking modal with form validation (react-hook-form)
+- All animations use Framer Motion with `prefers-reduced-motion` support
+- Responsive: desktop / tablet / mobile breakpoints
+
 ## Structure
 
 ```text

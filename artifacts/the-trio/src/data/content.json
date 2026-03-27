@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "wordmark": "TRIO",
+    "cta": "Book a Session →"
+  },
+  "hero": {
+    "label": "Product Intelligence & Execution",
+    "headingLines": [
+      "You bring the insight.",
+      "We deliver the",
+      "right product."
+    ],
+    "body": "A few structured conversations with the Trio and the system does the rest — research, validation, prototype, and a product direction you can trust.",
+    "cta1": "Book a Session →",
+    "cta2": "See How It Works ↓"
+  },
+  "problem": {
+    "heading": ["Most teams build", "what's requested."],
+    "items": [
+      {
+        "number": "01",
+        "label": "The Requirement Problem",
+        "body": "Clients know their domain. They do not know what product will serve that domain best. The requirement is always a hypothesis — often a good one, rarely the final answer."
+      },
+      {
+        "number": "02",
+        "label": "The Translation Problem",
+        "body": "Between the client's intent and the development team lies a gap. Meetings, tickets, misunderstandings, rework. Most of the waste in software projects lives in this gap."
+      },
+      {
+        "number": "03",
+        "label": "The Timing Problem",
+        "body": "By the time most teams discover the product direction was wrong, months have passed. The prototype comes after the contract, not before it."
+      }
+    ],
+    "pullQuote": "The Trio works differently.",
+    "pullQuoteBody": "The intake session is not requirement gathering. It is domain research. By the time it concludes, the Trio knows your space — well enough to prescribe.",
+    "footnote": "Grounded in Evans' Domain-Driven Design, Christensen's Jobs-to-Be-Done, and the British Design Council's Double Diamond framework."
+  },
+  "process": {
+    "label": "The Process",
+    "heading": ["From first contact", "to working product."],
+    "stages": [
+      {
+        "number": "STAGE 01",
+        "title": "Intelligent Outreach",
+        "body": "Before you reach us, the system is already working. Ad framings, positioning signals, and market context — continuously refined."
+      },
+      {
+        "number": "STAGE 02",
+        "title": "Structured Intake",
+        "body": "You book. You provide context. The system immediately begins domain research and produces a briefing document for the Trio — before the first session."
+      },
+      {
+        "number": "STAGE 03",
+        "title": "Deep Sessions",
+        "body": "A small number of high-value conversations. The Trio clarifies, challenges, and expands. The goal is clarity — not prolonged discussion. The system supports in real time."
+      },
+      {
+        "number": "STAGE 04",
+        "title": "Parallel Build",
+        "body": "While sessions happen, prototypes are materializing. The domain model is made concrete. By alignment, a working demo exists."
+      },
+      {
+        "number": "STAGE 05",
+        "title": "Convergence",
+        "body": "Requirements finalize. Demo is ready. Product direction is clear. Next steps are obvious. Not because we were lucky — because the process was designed this way."
+      }
+    ]
+  },
+  "system": {
+    "label": "The System",
+    "heading": ["Two products.", "One intelligence."],
+    "cards": [
+      {
+        "tag": "The Trio → Market",
+        "title": "Internal Use",
+        "body": "The system knows the Trio's backgrounds, past work, and market signals. It generates positioning strategies and advertisement framings that the Trio can brainstorm against — sharpening the message through dialogue with the system itself.",
+        "footer": "This is how you found us."
+      },
+      {
+        "tag": "Client Product → Market",
+        "title": "Client Use",
+        "body": "Once a product is being built, the same capability is instantiated fresh for the client's domain. It does not reuse the Trio's logic — it rebuilds from the client's market context, target users, and the job the product does. The result: the product is not just built. It is introduced correctly.",
+        "footer": "Your product, positioned from day one."
+      }
+    ],
+    "pipeline": [
+      "┌─────────────────────────┐",
+      "│  CLIENT INTAKE          │",
+      "│  domain context         │",
+      "│  constraints + goals    │",
+      "└──────────┬──────────────┘",
+      "           │",
+      "     ┌─────▼──────┐",
+      "     │  AI SYSTEM  │",
+      "     │  research   │",
+      "     │  synthesis  │",
+      "     │  modeling   │",
+      "     └─────┬───────┘",
+      "           │",
+      "    ┌──────▼──────┐   ┌──────────────┐",
+      "    │  THE TRIO   │◄──│  DOMAIN      │",
+      "    │  sessions   │   │  EXPERTISE   │",
+      "    │  + build    │   │  (emergent)  │",
+      "    └──────┬──────┘   └──────────────┘",
+      "           │",
+      "    ┌──────▼──────┐",
+      "    │  PRODUCT    │",
+      "    │  + market   │",
+      "    │  framing    │",
+      "    └─────────────┘"
+    ]
+  },
+  "trio": {
+    "label": "The People",
+    "heading": ["Three roles.", "One unit."],
+    "closingQuote": "Three complementary capabilities. One position. One product.",
+    "members": [
+      {
+        "role": "The Lead",
+        "title": "System Architect",
+        "body": "Thinks in systems before he thinks in code. The Lead's role is conceptual integrity — ensuring that what gets built reflects reality accurately, not just what the client requested.\n\nHe is the primary knowledge cruncher in every intake session. The one who, by the session's end, can say with confidence: this is what you need, and this is why.",
+        "tags": ["Domain Modeling", "Architecture", "Philosophy"]
+      },
+      {
+        "role": "The Apprentice",
+        "title": "Integrator",
+        "body": "Lives at the intersection of classical and agentic development. He has written production code in the traditional sense and orchestrated AI agents in the new sense — and crucially, understands the difference between them.\n\nThe Apprentice ensures that the Lead's domain model survives contact with implementation, and that the Brute's output meets the standard the model requires.",
+        "tags": ["Agentic Systems", "Integration", "Technical Judgment"]
+      },
+      {
+        "role": "The Brute",
+        "title": "Executor",
+        "body": "No vocabulary of classical programming. Total fluency in AI-native execution. Given a specification, the Brute owns the process of producing it — rapidly, reliably, using the full capability of agentic development tools.\n\nPrimarily: UI, interaction, and frontend. With specification from the Lead or Apprentice: backend and infrastructure. This scope expands as the tools do.",
+        "tags": ["UI Execution", "Agentic Build", "Output Speed"]
+      }
+    ]
+  },
+  "frameworks": {
+    "label": "The Foundation",
+    "heading": ["Every claim we make", "is grounded."],
+    "subheading": "We did not invent these ideas. We are the first team operating all of them simultaneously, at agentic speed.",
+    "tiles": [
+      {
+        "label": "Domain-Driven Design · Evans, 2003",
+        "claim": "Domain expertise through structured collaboration",
+        "body": "Developers who become domain experts are the most effective builders. The intake session is knowledge crunching — and it ends when the Trio knows the domain."
+      },
+      {
+        "label": "Jobs-to-Be-Done · Christensen, Harvard",
+        "claim": "The real need behind the stated requirement",
+        "body": "Clients are experts in their own experience. They are not experts in the solution space. The Trio excavates the job beneath the requirement — and builds for that."
+      },
+      {
+        "label": "Double Diamond · British Design Council, 2005",
+        "claim": "Problem definition is half the work",
+        "body": "Teams that define the right problem before building produce better outcomes. The Trio's intake is the first diamond — run before most teams start theirs."
+      },
+      {
+        "label": "Lean Startup · Ries, 2011",
+        "claim": "The prototype is a hypothesis, not a promise",
+        "body": "The parallel build during intake is not a bet on correct requirements. It is the Build-Measure-Learn loop run at the intake stage — making the alignment conversation concrete."
+      },
+      {
+        "label": "The Trusted Advisor · Maister, Green & Galford",
+        "claim": "Trust is earned through demonstrated competence",
+        "body": "Trustworthiness = (Credibility + Reliability + Intimacy) ÷ Self-Orientation. The intake system is designed to address all four variables directly."
+      },
+      {
+        "label": "Agentic Coding Trends · Anthropic, 2026",
+        "claim": "Small teams with agentic tools outperform large teams",
+        "body": "One engineer can now maintain systems that previously required teams. The Trio's architecture — Lead, Apprentice, Brute — is designed around this reality."
+      }
+    ]
+  },
+  "cta": {
+    "label": "Ready",
+    "heading": ["A few conversations.", "A working product."],
+    "body": "Book a session with the Trio. You'll provide context. We'll prepare. By the time we meet, the system has already begun working on your problem.",
+    "button": "Book a Session →",
+    "footnote": "No retainer. No discovery fee. One focused engagement."
+  },
+  "modal": {
+    "title": "Book a Session",
+    "submitButton": "Send Context →",
+    "confirmMessage": "We'll respond within 24 hours with a calendar link.",
+    "stageOptions": ["Idea / Early thinking", "Something built", "Existing product"]
+  },
+  "footer": {
+    "wordmark": "TRIO",
+    "subtitle": "Product Intelligence & Execution",
+    "cta": "Book a Session →",
+    "copyright": "© 2026 The Trio · Built with the same system we sell"
+  }
+}
