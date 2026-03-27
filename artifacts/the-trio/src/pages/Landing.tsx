@@ -19,6 +19,8 @@ const S = {
   mono: "'DM Mono', monospace",
 };
 
+const PAD = "clamp(24px, 6vw, 80px)";
+
 function HeroSection({ onBookClick }: { onBookClick: () => void }) {
   const ruleRef = useRef<HTMLDivElement>(null);
   const ruleInView = useInView(ruleRef, { once: true });
@@ -49,9 +51,10 @@ function HeroSection({ onBookClick }: { onBookClick: () => void }) {
       style={{
         minHeight: "100vh",
         display: "flex",
-        alignItems: "center",
+        flexDirection: "column",
+        justifyContent: "center",
         background: S.bgPrimary,
-        padding: "0 6vw",
+        padding: `80px ${PAD} 60px`,
         position: "relative",
         overflow: "hidden",
       }}
@@ -66,7 +69,7 @@ function HeroSection({ onBookClick }: { onBookClick: () => void }) {
       />
 
       <motion.div
-        style={{ paddingTop: "80px", maxWidth: "860px" }}
+        style={{ maxWidth: "860px", position: "relative" }}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -196,7 +199,7 @@ function ProblemSection() {
     <section
       style={{
         background: S.bgPrimary,
-        padding: "120px 6vw",
+        padding: `120px ${PAD}`,
         borderTop: `1px solid ${S.bgBorder}`,
       }}
     >
@@ -308,7 +311,7 @@ function ProcessSection() {
       id="process"
       style={{
         background: S.bgSurface,
-        padding: "120px 6vw",
+        padding: `120px ${PAD}`,
         borderTop: `1px solid ${S.bgBorder}`,
       }}
     >
@@ -337,7 +340,7 @@ function ProcessSection() {
             ref={lineRef}
             style={{
               position: "absolute",
-              top: "28px",
+              top: "32px",
               left: "0",
               height: "1px",
               width: lineInView ? "100%" : "0%",
@@ -416,7 +419,7 @@ function SystemSection() {
     <section
       style={{
         background: S.bgPrimary,
-        padding: "120px 6vw",
+        padding: `120px ${PAD}`,
         borderTop: `1px solid ${S.bgBorder}`,
       }}
     >
@@ -499,7 +502,7 @@ function TrioSection({ onBookClick }: { onBookClick: () => void }) {
     <section
       style={{
         background: S.bgSurface,
-        padding: "120px 6vw",
+        padding: `120px ${PAD}`,
         borderTop: `1px solid ${S.bgBorder}`,
       }}
     >
@@ -610,7 +613,7 @@ function FrameworksSection() {
     <section
       style={{
         background: S.bgPrimary,
-        padding: "120px 6vw",
+        padding: `120px ${PAD}`,
         borderTop: `1px solid ${S.bgBorder}`,
       }}
     >
@@ -675,7 +678,7 @@ function CTASection({ onBookClick }: { onBookClick: () => void }) {
     <section
       style={{
         background: S.bgSurface,
-        padding: "140px 6vw",
+        padding: `140px ${PAD}`,
         borderTop: `1px solid ${S.bgBorder}`,
         textAlign: "center",
         position: "relative",
@@ -775,7 +778,7 @@ function Footer({ onBookClick }: { onBookClick: () => void }) {
       style={{
         background: S.bgPrimary,
         borderTop: `1px solid ${S.bgBorder}`,
-        padding: "48px 6vw",
+        padding: `48px ${PAD}`,
       }}
     >
       <div
