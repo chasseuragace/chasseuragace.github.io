@@ -35,7 +35,7 @@ export function FrameworkCard({ tile, style }: FrameworkCardProps) {
     <div
       style={{
         perspective: "1000px",
-        height: "220px",
+        height: "300px",
         cursor: hasLink ? "pointer" : "default",
         ...style,
       }}
