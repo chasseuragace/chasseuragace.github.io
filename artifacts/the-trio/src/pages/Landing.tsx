@@ -1,27 +1,10 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Nav } from "../components/Nav";
-import { BookingModal } from "../components/BookingModal";
+import { PageLayout } from "@/layouts/PageLayout";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { FrameworkCard } from "../components/FrameworkCard";
+import { S, PAD } from "@/lib/styles";
 import content from "../data/content.json";
-
-const S = {
-  bgPrimary: "#0A0A0A",
-  bgSurface: "#111111",
-  bgCard: "#161616",
-  bgBorder: "#222222",
-  textPrimary: "#F0EDE6",
-  textSecondary: "#888880",
-  textMid: "#666660",
-  textGhost: "#333330",
-  accent: "#C8A96E",
-  accentDim: "#7A6340",
-  serif: "'DM Serif Display', serif",
-  mono: "'DM Mono', monospace",
-};
-
-const PAD = "clamp(24px, 6vw, 80px)";
 
 function HeroSection({ onBookClick }: { onBookClick: () => void }) {
   const ruleRef = useRef<HTMLDivElement>(null);
@@ -818,22 +801,22 @@ function Footer({ onBookClick }: { onBookClick: () => void }) {
 }
 
 export default function Landing() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
-    <div style={{ background: S.bgPrimary, minHeight: "100vh" }}>
-      <Nav onBookClick={() => setModalOpen(true)} />
-      <main>
-        <HeroSection onBookClick={() => setModalOpen(true)} />
-        <ProblemSection />
-        <ProcessSection />
-        <SystemSection />
-        <TrioSection onBookClick={() => setModalOpen(true)} />
-        <FrameworksSection />
-        <CTASection onBookClick={() => setModalOpen(true)} />
-      </main>
-      <Footer onBookClick={() => setModalOpen(true)} />
-      <BookingModal open={modalOpen} onClose={() => setModalOpen(false)} />
-    </div>
+    <PageLayout>
+      {(openBooking) => (
+        <>
+          <main>
+            <HeroSection onBookClick={openBooking} />
+            <ProblemSection />
+            <ProcessSection />
+            <SystemSection />
+            <TrioSection onBookClick={openBooking} />
+            <FrameworksSection />
+            <CTASection onBookClick={openBooking} />
+          </main>
+          <Footer onBookClick={openBooking} />
+        </>
+      )}
+    </PageLayout>
   );
 }

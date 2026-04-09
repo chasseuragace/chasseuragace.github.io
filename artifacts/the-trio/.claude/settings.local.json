@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(pnpm --version)",
+      "Read(//Users/ajaydahal/Downloads/Attached-Assets/**)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm dev:*)",
+      "mcp__piper-tts__speak",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__read_text_file",
+      "Bash(node:*)",
+      "Bash(pnpm deploy:*)",
+      "Bash(pnpm run:*)",
+      "WebFetch(domain:ghimireaashutosh.com.np)",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://ghimireaashutosh.com.np/\")",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://ghimireaashutosh.com.np/\")",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://ghimireaashutosh.com.np/assets/index-Fo_hqlui.js\")",
+      "Bash(npx playwright:*)",
+      "Bash(pnpm add:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "filesystem",
+    "agent-runtime"
+  ]
+}

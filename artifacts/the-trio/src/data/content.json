@@ -15,7 +15,10 @@
     "cta2": "See How It Works ↓"
   },
   "problem": {
-    "heading": ["Most teams build", "what's requested."],
+    "heading": [
+      "Most teams build",
+      "what's requested."
+    ],
     "items": [
       {
         "number": "01",
@@ -39,7 +42,10 @@
   },
   "process": {
     "label": "The Process",
-    "heading": ["From first contact", "to working product."],
+    "heading": [
+      "From first contact",
+      "to working product."
+    ],
     "stages": [
       {
         "number": "STAGE 01",
@@ -70,7 +76,10 @@
   },
   "system": {
     "label": "The System",
-    "heading": ["Two products.", "One intelligence."],
+    "heading": [
+      "Two products.",
+      "One intelligence."
+    ],
     "cards": [
       {
         "tag": "The Trio → Market",
@@ -114,32 +123,334 @@
   },
   "trio": {
     "label": "The People",
-    "heading": ["Three roles.", "One unit."],
+    "heading": [
+      "Three roles.",
+      "One unit."
+    ],
     "closingQuote": "Three complementary capabilities. One position. One product.",
     "members": [
       {
+        "id": "the-lead",
+        "path": "/the-lead",
+        "navLabel": "THE LEAD",
         "role": "The Lead",
         "title": "System Architect",
         "body": "Thinks in systems before he thinks in code. The Lead's role is conceptual integrity — ensuring that what gets built reflects reality accurately, not just what the client requested.\n\nHe is the primary knowledge cruncher in every intake session. The one who, by the session's end, can say with confidence: this is what you need, and this is why.",
-        "tags": ["Domain Modeling", "Architecture", "Philosophy"]
+        "tags": [
+          "Domain Modeling",
+          "Architecture",
+          "Philosophy"
+        ],
+        "page": {
+          "heroSubtitle": "Thinks in systems before he thinks in code. The primary knowledge cruncher in every intake session.",
+          "philosophy": {
+            "label": "Philosophy",
+            "heading": [
+              "Conceptual integrity",
+              "above all else."
+            ],
+            "quote": "The requirement is always a hypothesis — often a good one, rarely the final answer.",
+            "quoteBody": "The Lead doesn't take requirements at face value. Every intake session is domain research — a structured excavation of what actually needs to exist."
+          },
+          "principles": {
+            "label": "Operating Principles",
+            "heading": [
+              "How the Lead",
+              "approaches every engagement."
+            ],
+            "items": [
+              {
+                "number": "01",
+                "title": "Domain First",
+                "body": "Before any architecture decision, understand the domain deeply. Software that reflects the domain accurately is software that works."
+              },
+              {
+                "number": "02",
+                "title": "Conceptual Integrity",
+                "body": "A system designed by one mind — or a small, aligned group — will be coherent. Coherent systems are maintainable, explainable, and trusted."
+              },
+              {
+                "number": "03",
+                "title": "Prescribe, Don't Transcribe",
+                "body": "The client knows their domain. They don't know the solution space. The Lead's role is to prescribe what should be built — and articulate why."
+              },
+              {
+                "number": "04",
+                "title": "Knowledge Crunching",
+                "body": "Every conversation is an opportunity to refine the model. The domain model isn't a diagram — it's a living understanding that improves with every session."
+              }
+            ]
+          },
+          "roleInTrio": {
+            "label": "Role in the Trio",
+            "heading": [
+              "The thinking layer",
+              "of every engagement."
+            ],
+            "stages": [
+              {
+                "label": "Before the Session",
+                "body": "The system prepares a domain briefing. The Lead reviews it, identifies gaps, and formulates the questions that will drive the conversation."
+              },
+              {
+                "label": "During the Session",
+                "body": "The Lead is the primary listener and questioner. Every answer is processed through the lens of domain modeling — what entities exist, what relationships matter, what the real constraints are."
+              },
+              {
+                "label": "After the Session",
+                "body": "The domain model is refined. The Lead hands a clear architectural direction to the Apprentice, who ensures it survives implementation. The Brute builds it."
+              }
+            ]
+          },
+          "blog": {
+            "label": "Writing",
+            "heading": [
+              "From the Lead's",
+              "notebook."
+            ]
+          },
+          "closing": {
+            "quote": "This is what you need, and this is why.",
+            "attribution": "— The Lead, at the end of every intake session"
+          }
+        }
       },
       {
+        "id": "the-apprentice",
+        "path": "/the-apprentice",
+        "navLabel": "THE APPRENTICE",
         "role": "The Apprentice",
         "title": "Integrator",
         "body": "Lives at the intersection of classical and agentic development. He has written production code in the traditional sense and orchestrated AI agents in the new sense — and crucially, understands the difference between them.\n\nThe Apprentice ensures that the Lead's domain model survives contact with implementation, and that the Brute's output meets the standard the model requires.",
-        "tags": ["Agentic Systems", "Integration", "Technical Judgment"]
+        "tags": [
+          "Agentic Systems",
+          "Integration",
+          "Technical Judgment"
+        ],
+        "page": {
+          "heroSubtitle": "The bridge between conceptual design and working code. Classical engineering meets agentic execution.",
+          "philosophy": {
+            "label": "Philosophy",
+            "heading": [
+              "The model must survive",
+              "contact with reality."
+            ],
+            "quote": "A beautiful architecture that can't be implemented is just a drawing. An implementation that ignores the architecture is just a hack.",
+            "quoteBody": "The Apprentice holds both truths simultaneously — ensuring the domain model lands in code without compromise, and that the code earns the trust of the model."
+          },
+          "principles": {
+            "label": "Operating Principles",
+            "heading": [
+              "How the Apprentice",
+              "bridges every gap."
+            ],
+            "items": [
+              {
+                "number": "01",
+                "title": "Translate, Don't Dilute",
+                "body": "The domain model from the Lead is precise for a reason. The Apprentice's job is to translate it into implementation without losing fidelity."
+              },
+              {
+                "number": "02",
+                "title": "Classical When It Matters",
+                "body": "Not everything should be delegated to agents. The Apprentice knows when hand-written code is the right choice — and when agentic tooling multiplies output."
+              },
+              {
+                "number": "03",
+                "title": "Quality Gate",
+                "body": "Every output from the Brute passes through the Apprentice's judgment. Speed without standards is just fast failure."
+              },
+              {
+                "number": "04",
+                "title": "Integration Is the Product",
+                "body": "Components that work in isolation but fail together are worthless. The Apprentice owns the seams — the places where subsystems meet."
+              }
+            ]
+          },
+          "roleInTrio": {
+            "label": "Role in the Trio",
+            "heading": [
+              "The integration layer",
+              "of every engagement."
+            ],
+            "stages": [
+              {
+                "label": "During the Session",
+                "body": "The Apprentice listens for implementation risk. While the Lead models the domain, the Apprentice is already mapping it to technical constraints — what's feasible, what's fragile, what needs a different approach."
+              },
+              {
+                "label": "During the Build",
+                "body": "Translates the Lead's architecture into specifications the Brute can execute. Reviews output continuously. Catches drift between intent and implementation before it compounds."
+              },
+              {
+                "label": "At Convergence",
+                "body": "Owns the integration. Ensures that separately built components compose correctly, that the domain model is faithfully represented, and that the product works as a whole."
+              }
+            ]
+          },
+          "blog": {
+            "label": "Writing",
+            "heading": [
+              "From the Apprentice's",
+              "workbench."
+            ]
+          },
+          "closing": {
+            "quote": "The architecture is only as good as its implementation. The implementation is only as good as its architecture.",
+            "attribution": "— The Apprentice, on why both sides matter"
+          }
+        }
       },
       {
+        "id": "the-brute",
+        "path": "/the-brute",
+        "navLabel": "THE BRUTE",
         "role": "The Brute",
         "title": "Executor",
         "body": "No vocabulary of classical programming. Total fluency in AI-native execution. Given a specification, the Brute owns the process of producing it — rapidly, reliably, using the full capability of agentic development tools.\n\nPrimarily: UI, interaction, and frontend. With specification from the Lead or Apprentice: backend and infrastructure. This scope expands as the tools do.",
-        "tags": ["UI Execution", "Agentic Build", "Output Speed"]
+        "tags": [
+          "UI Execution",
+          "Agentic Build",
+          "Output Speed"
+        ],
+        "page": {
+          "heroSubtitle": "Total fluency in AI-native execution. Given a specification, the Brute owns the process of producing it — rapidly and reliably.",
+          "philosophy": {
+            "label": "Philosophy",
+            "heading": [
+              "Specification in,",
+              "product out."
+            ],
+            "quote": "Speed is not the goal. Speed is the byproduct of removing everything that isn't building.",
+            "quoteBody": "The Brute doesn't plan, doesn't debate, doesn't second-guess. The specification has already been refined by the Lead and the Apprentice. What remains is execution — and execution is what the Brute does."
+          },
+          "principles": {
+            "label": "Operating Principles",
+            "heading": [
+              "How the Brute",
+              "ships every time."
+            ],
+            "items": [
+              {
+                "number": "01",
+                "title": "Trust the Specification",
+                "body": "The spec comes from the Lead through the Apprentice. It has been challenged, refined, and validated. The Brute's job is to realize it — not to question it."
+              },
+              {
+                "number": "02",
+                "title": "Agentic-Native",
+                "body": "Every tool, every workflow, every shortcut that AI-native development offers — the Brute uses it. Not as an experiment, but as the primary mode of production."
+              },
+              {
+                "number": "03",
+                "title": "Output Over Process",
+                "body": "No standups, no status updates, no ceremony. The demo speaks. If it works, the process was right. If it doesn't, the next iteration is already underway."
+              },
+              {
+                "number": "04",
+                "title": "Scope Expands With Tooling",
+                "body": "Today: UI, interaction, frontend. Tomorrow: whatever the agentic tools can reliably produce. The Brute's capability ceiling is the tooling's capability ceiling."
+              }
+            ]
+          },
+          "roleInTrio": {
+            "label": "Role in the Trio",
+            "heading": [
+              "The execution layer",
+              "of every engagement."
+            ],
+            "stages": [
+              {
+                "label": "Receiving the Spec",
+                "body": "The Apprentice delivers a clear, validated specification. The Brute reviews it for completeness — not for correctness. Correctness is the upstream team's responsibility."
+              },
+              {
+                "label": "During the Build",
+                "body": "Rapid, parallel execution using agentic development tools. UI materializes. Interactions take shape. Prototypes emerge while the intake sessions are still happening."
+              },
+              {
+                "label": "At Demo",
+                "body": "The working product is the deliverable. Not a mockup, not a wireframe — a functional demo that the client can touch, test, and respond to."
+              }
+            ]
+          },
+          "blog": {
+            "label": "Writing",
+            "heading": [
+              "From the Brute's",
+              "build log."
+            ]
+          },
+          "closing": {
+            "quote": "The demo is ready. It was ready before you asked.",
+            "attribution": "— The Brute, on delivery"
+          },
+          "portfolio": [
+            {
+              "title": "Bagamati Tourism Website",
+              "description": "Comprehensive tourism web application for Bagamati Province with dynamic content management and location-based discovery. Government-grade delivery.",
+              "url": "https://tourism.bagamati.gov.np/",
+              "imageUrl": "/screenshots/bagamati-tourism-website.png"
+            },
+            {
+              "title": "Nepal Legal Connect",
+              "description": "Full-stack legal tech platform with 11 modules, bilingual Nepali/English support, and document generation for Nepal's legal community.",
+              "url": "https://legaltechnepal.netlify.app/",
+              "imageUrl": "/screenshots/nepal-legal-connect.png"
+            },
+            {
+              "title": "Golmeshor Dudh Dairy & Bakery",
+              "description": "Modern full-stack e-commerce platform for a dairy business with admin panel, OTP ordering, and PWA support.",
+              "url": "https://golmeshor-dairy.vercel.app/",
+              "imageUrl": "/screenshots/golmeshor-dudh-dairy-bakery.png"
+            },
+            {
+              "title": "ToolForge",
+              "description": "Production-ready developer tools platform with 100+ browser-based utilities, 100% client-side for complete privacy.",
+              "url": "https://tforge.netlify.app/",
+              "imageUrl": "/screenshots/toolforge.png"
+            },
+            {
+              "title": "Udaan Sarathi — Recruitment Platform",
+              "description": "Comprehensive recruitment management system for Nepal's job market.",
+              "url": "https://udaansarathi.com/",
+              "imageUrl": "/screenshots/udaan-sarathi-recruitment-platform.png"
+            },
+            {
+              "title": "Emergency Response Management System",
+              "description": "Real-time emergency platform with OpenStreetMap integration for incident reporting and response coordination.",
+              "url": "https://alertsys.netlify.app/",
+              "imageUrl": "/screenshots/emergency-response-management-system.png"
+            },
+            {
+              "title": "Hospitality Booking Platform",
+              "description": "Multi-step hotel booking system with payment integration prep.",
+              "url": "https://hotelsys.netlify.app/",
+              "imageUrl": "/screenshots/hospitality-booking-platform.png"
+            },
+            {
+              "title": "Enterprise Loyalty & Rewards System",
+              "description": "Analytics dashboard for customer insights and loyalty program management.",
+              "url": "https://loyalhub.netlify.app/",
+              "imageUrl": "/screenshots/enterprise-loyalty-rewards-system.png"
+            },
+            {
+              "title": "Educational Attendance Tracking System",
+              "description": "Mobile-first QR attendance system with offline-first capabilities.",
+              "url": "https://smartyatt.netlify.app/",
+              "imageUrl": "/screenshots/educational-attendance-tracking-system.png"
+            }
+          ]
+        }
       }
     ]
   },
   "frameworks": {
     "label": "The Foundation",
-    "heading": ["Every claim we make", "is grounded."],
+    "heading": [
+      "Every claim we make",
+      "is grounded."
+    ],
     "subheading": "We did not invent these ideas. We are the first team operating all of them simultaneously, at agentic speed.",
     "tiles": [
       {
@@ -192,9 +503,27 @@
       }
     ]
   },
+  "portfolio": {
+    "label": "Work",
+    "heading": [
+      "Built by the Trio."
+    ],
+    "subheading": "Products we've shipped — from intake to deployment.",
+    "projects": [
+      {
+        "title": "Trio Landing — This Website",
+        "description": "The product intelligence and execution landing page. Domain-driven content, AI-assisted build pipeline, and a booking system connected to a Cloudflare Worker backend.",
+        "url": "https://chasseuragace.github.io",
+        "imageUrl": "/screenshots/trio-landing-this-website.png"
+      }
+    ]
+  },
   "cta": {
     "label": "Ready",
-    "heading": ["A few conversations.", "A working product."],
+    "heading": [
+      "A few conversations.",
+      "A working product."
+    ],
     "body": "Book a session with the Trio. You'll provide context. We'll prepare. By the time we meet, the system has already begun working on your problem.",
     "button": "Book a Session →",
     "footnote": "No retainer. No discovery fee. One focused engagement."
@@ -203,7 +532,11 @@
     "title": "Book a Session",
     "submitButton": "Send Context →",
     "confirmMessage": "We'll respond within 24 hours with a calendar link.",
-    "stageOptions": ["Idea / Early thinking", "Something built", "Existing product"]
+    "stageOptions": [
+      "Idea / Early thinking",
+      "Something built",
+      "Existing product"
+    ]
   },
   "footer": {
     "wordmark": "TRIO",
