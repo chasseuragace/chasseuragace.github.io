@@ -18,7 +18,7 @@ git push origin main
 ```
 - Auto-deploys on push to GitHub
 - Endpoint: `https://trio-worker.chasseuragace.workers.dev/`
-- Requires: `KAHA_TOKEN`, `GROQ_TOKEN` (set in Cloudflare dashboard)
+- Requires: `API_TOKEN`, `GROQ_TOKEN` (set in Cloudflare dashboard)
 
 ## Available Scripts
 
@@ -36,17 +36,17 @@ git push origin main
 ## Environment Variables
 
 ### Cloudflare Worker (set in dashboard)
-- `KAHA_TOKEN` - JWT token for Kaha API
+- `API_TOKEN` - JWT token for backend API
 - `GROQ_TOKEN` - API key for Groq LLM
 
 ## API Endpoints
 
 ### Booking
 - `POST /api/bookings` - Submit booking form
-- Creates asset in Kaha with LLM-generated narrative
+- Creates asset with LLM-generated narrative
 
-### Kaha Proxy
-- `GET /api/kaha/main/api/v3/asset/my-business` - List assets
+### API Proxy
+- `GET /api/proxy/main/api/v3/asset/my-business` - List assets
 - All requests include Bearer token automatically
 
 ### Health
@@ -57,4 +57,4 @@ git push origin main
 
 1. **Frontend**: `pnpm run deploy` → GitHub Pages
 2. **Worker**: `git push` → Cloudflare auto-deploy
-3. **Assets**: Bookings → Worker → Kaha API → Assets page
+3. **Assets**: Bookings → Worker → API → Assets page

@@ -28,7 +28,7 @@ Auto-deploys on push. Endpoint: `https://trio-worker.chasseuragace.workers.dev/`
 - `pnpm run deploy` - Deploy to Cloudflare
 
 ### Environment Variables (Cloudflare Dashboard)
-- `KAHA_TOKEN` - JWT token for Kaha API
+- `API_TOKEN` - JWT token for backend API
 - `GROQ_TOKEN` - API key for Groq LLM
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for full details.

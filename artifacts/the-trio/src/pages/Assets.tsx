@@ -18,7 +18,7 @@ const WORKER_API = "https://trio-worker.chasseuragace.workers.dev";
 
 async function fetchAssets(): Promise<Asset[]> {
   const response = await fetch(
-    `${WORKER_API}/api/kaha/main/api/v3/asset/my-business`
+    `${WORKER_API}/api/proxy/main/api/v3/asset/my-business`
   );
 
   if (!response.ok) {
@@ -208,7 +208,7 @@ function AssetsSection() {
               {error instanceof Error ? error.message : "Failed to load assets"}
             </p>
             <p style={{ fontFamily: S.mono, fontSize: "12px", color: S.textMid, marginTop: "8px" }}>
-              Make sure your KAHA_TOKEN is valid and configured in the worker.
+              Make sure your API_TOKEN is valid and configured in the worker.
             </p>
           </div>
         )}
