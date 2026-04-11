@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "payment-system-architecture-for-multi-module-platforms",
+    "title": "Payment System Architecture for Multi-Module Platforms",
+    "date": "2026-04-09",
+    "excerpt": "When multiple booking modules share a platform, payment cannot live inside any one of them. It must be extracted, made generic, and governed by a single contract. Here is how."
+  },
+  {
+    "slug": "thesis",
+    "title": "\"Staging Intelligence: A Dramaturgical Framework for Designing Edge-Native Agentic Systems\"",
+    "date": "2026-04-08",
+    "excerpt": "\"Agent systems are better understood as staged plays — with worlds, characters, acts, and controlled improvisation — than as traditional workflows. The Lead's master's thesis.\""
+  },
+  {
+    "slug": "domain-modeling-is-not-diagramming",
+    "title": "Domain Modeling Is Not Diagramming",
+    "date": "2026-04-02",
+    "excerpt": "Most teams confuse domain modeling with drawing boxes and arrows. A domain model is not a diagram — it is an understanding."
+  }
+]
