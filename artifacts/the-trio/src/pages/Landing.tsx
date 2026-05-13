@@ -27,7 +27,7 @@ function HeroSection({ onBookClick }: { onBookClick: () => void }) {
 
   const itemVariants = (delay: number) => ({
     hidden: { opacity: 0, y: -12 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay } },
   });
 
   return (

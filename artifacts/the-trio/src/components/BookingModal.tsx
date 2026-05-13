@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import content from "../data/content.json";
+import { submitBookingToFirebase, BookingPayload } from "../lib/firebase";
 
 interface BookingModalProps {
   open: boolean;
@@ -40,25 +41,22 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onClose]);
 
+
+
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch("https://trio-worker.chasseuragace.workers.dev/api/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          company: data.stage,
-          message: `${data.context}\n\nStage: ${data.stage}`,
-        }),
-      });
+      // Construct the payload according to BookingPayload interface
+      const bookingPayload: BookingPayload = {
+        name: data.name,
+        email: data.email,
+        company: data.stage, // Map stage to company
+        message: `${data.context}\n\nStage: ${data.stage}`, // Construct message
+      };
 
-      if (!response.ok) {
-        throw new Error("Failed to submit booking");
-      }
+      // Submit to Firebase
+      await submitBookingToFirebase(bookingPayload);
 
+      // Handle success
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -67,7 +65,8 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
       }, 2500);
     } catch (error) {
       console.error("Booking submission error:", error);
-      alert("Failed to submit booking. Please try again.");
+      // Provide a more specific error message if possible, or a general one
+      alert("Failed to submit booking. Please check your connection and try again.");
     }
   };
 
@@ -187,8 +186,11 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
                   <label htmlFor="name" style={labelStyle}>Name</label>
                   <input
                     id="name"
-                    ref={firstInputRef}
                     {...register("name", { required: "Name is required" })}
+                    ref={(e) => {
+                      register("name").ref(e);
+                      firstInputRef.current = e;
+                    }}
                     style={{ ...inputStyle, borderColor: errors.name ? "#8B3A3A" : "#222222" }}
                     onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
                     onBlur={(e) => { e.currentTarget.style.borderColor = errors.name ? "#8B3A3A" : "#222222"; }}
@@ -284,3 +286,4 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
     </AnimatePresence>
   );
 }
+
