@@ -5,28 +5,7 @@ import { PageLayout } from "@/layouts/PageLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { S, PAD } from "@/lib/styles";
 
-interface Asset {
-  id: string;
-  title: string;
-  description: string;
-  images: string[];
-  createdAt?: string;
-  updatedAt?: string;
-}
-
-const WORKER_API = "https://trio-worker.chasseuragace.workers.dev";
-
-async function fetchAssets(): Promise<Asset[]> {
-  const response = await fetch(
-    `${WORKER_API}/api/proxy/main/api/v3/asset/my-business`
-  );
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch assets: ${response.statusText}`);
-  }
-
-  return response.json();
-}
+import { fetchAssetsFromFirebase, Asset } from "../lib/firebase";
 
 function AssetCard({ asset }: { asset: Asset }) {
   const [hovered, setHovered] = useState(false);
@@ -49,27 +28,6 @@ function AssetCard({ asset }: { asset: Asset }) {
         transition: "border-color 200ms ease",
       }}
     >
-      {asset.images && asset.images.length > 0 && (
-        <div
-          style={{
-            width: "100%",
-            height: "192px",
-            background: S.bgPrimary,
-            overflow: "hidden",
-            flexShrink: 0,
-          }}
-        >
-          <img
-            src={asset.images[0]}
-            alt={asset.title}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
-          />
-        </div>
-      )}
-
       <div
         style={{
           padding: "32px",
@@ -104,6 +62,8 @@ function AssetCard({ asset }: { asset: Asset }) {
             background: S.bgPrimary,
             border: `1px solid ${S.bgBorder}`,
             textAlign: "justify",
+            overflowY: "auto",
+            maxHeight: "300px",
           }}
         >
           {asset.description}
@@ -122,9 +82,9 @@ function AssetCard({ asset }: { asset: Asset }) {
             flexShrink: 0,
           }}
         >
-          <span>ID: {asset.id.substring(0, 8)}...</span>
+          <span>ID: {asset.id!.substring(0, 8)}...</span>
           {asset.createdAt && (
-            <span>{new Date(asset.createdAt).toLocaleDateString()}</span>
+            <span>{new Date(asset.createdAt as Date).toLocaleDateString()}</span>
           )}
         </div>
       </div>
@@ -135,7 +95,7 @@ function AssetCard({ asset }: { asset: Asset }) {
 function AssetsSection() {
   const { data: assets = [], isLoading, error } = useQuery({
     queryKey: ["assets"],
-    queryFn: fetchAssets,
+    queryFn: fetchAssetsFromFirebase,
     retry: 2,
   });
 
@@ -173,7 +133,7 @@ function AssetsSection() {
               marginBottom: "16px",
             }}
           >
-            <span style={{ display: "block" }}>Inbound Queries.</span>
+            <span style={{ display: "block" }}>AI Transformed Assets.</span>
           </h2>
           <p
             style={{
@@ -185,7 +145,7 @@ function AssetsSection() {
               marginBottom: "64px",
             }}
           >
-            Submissions received through the intake form. Each entry represents a potential engagement processed by the system.
+            Inbound queries processed and transcribed into detailed narratives by the Cloudflare Worker's internal AI flow.
           </p>
         </ScrollReveal>
 
@@ -206,9 +166,6 @@ function AssetsSection() {
           >
             <p style={{ fontFamily: S.mono, fontSize: "14px", color: "#8B3A3A" }}>
               {error instanceof Error ? error.message : "Failed to load assets"}
-            </p>
-            <p style={{ fontFamily: S.mono, fontSize: "12px", color: S.textMid, marginTop: "8px" }}>
-              Make sure your API_TOKEN is valid and configured in the worker.
             </p>
           </div>
         )}
