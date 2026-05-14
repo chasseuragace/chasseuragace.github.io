@@ -52,8 +52,8 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
         body: JSON.stringify({
           name: data.name,
           email: data.email,
-          stage: data.stage,
-          context: data.context,
+          company: data.stage,
+          message: `${data.context}\n\nStage: ${data.stage}`,
         }),
       });
 
