@@ -533,6 +533,12 @@
         "description": "A sleek and atmospheric digital experience for a modern cafe and bar, driving reservations and engagement.",
         "url": "https://cloud9cafenbar.netlify.app",
         "imageUrl": "/screenshots/cloud9-cafe-bar.png"
+      },
+      {
+        "title": "Shaligram Guru",
+        "description": "A digital platform and informational presence for Shaligram Guru.",
+        "url": "https://shaligram-guru.netlify.app",
+        "imageUrl": "/screenshots/shaligram-guru.png"
       }
     ]
   },
