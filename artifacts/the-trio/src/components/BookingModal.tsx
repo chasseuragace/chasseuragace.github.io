@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import content from "../data/content.json";
-import { submitBookingToFirebase, BookingPayload } from "../lib/firebase";
 
 interface BookingModalProps {
   open: boolean;
@@ -45,16 +44,22 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Construct the payload according to BookingPayload interface
-      const bookingPayload: BookingPayload = {
-        name: data.name,
-        email: data.email,
-        company: data.stage, // Map stage to company
-        message: `${data.context}\n\nStage: ${data.stage}`, // Construct message
-      };
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          stage: data.stage,
+          context: data.context,
+        }),
+      });
 
-      // Submit to Firebase
-      await submitBookingToFirebase(bookingPayload);
+      if (!response.ok) {
+        throw new Error("Failed to submit booking");
+      }
 
       // Handle success
       setSubmitted(true);
