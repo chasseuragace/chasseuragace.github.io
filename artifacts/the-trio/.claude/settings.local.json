@@ -17,11 +17,21 @@
       "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://ghimireaashutosh.com.np/\")",
       "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://ghimireaashutosh.com.np/assets/index-Fo_hqlui.js\")",
       "Bash(npx playwright:*)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -X POST https://trio-worker.chasseuragace.workers.dev/api/bookings -H 'Content-Type: application/json' -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"company\":\"Test\",\"message\":\"test\"}' -v)",
+      "Bash(timeout 5 curl -X POST https://trio-worker.chasseuragace.workers.dev/api/bookings -H 'Content-Type: application/json' -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"company\":\"Test\",\"message\":\"test\"}')",
+      "Bash(curl -X POST https://trio-worker.chasseuragace.workers.dev/api/bookings -H 'Content-Type: application/json' -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"company\":\"Test\",\"message\":\"test\"}' -i)",
+      "Bash(curl *)",
+      "mcp__filesystem__list_directory"
     ]
   },
   "enabledMcpjsonServers": [
     "filesystem",
     "agent-runtime"
+  ],
+  "disabledMcpjsonServers": [
+    "linkedin-mcp-server"
   ]
 }

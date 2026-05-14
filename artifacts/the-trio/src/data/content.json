@@ -401,8 +401,7 @@
             {
               "title": "Golmeshor Dudh Dairy & Bakery",
               "description": "Modern full-stack e-commerce platform for a dairy business with admin panel, OTP ordering, and PWA support.",
-              "url": "https://golmeshor-dairy.vercel.app/",
-              "imageUrl": "/screenshots/golmeshor-dudh-dairy-bakery.png"
+              "url": "https://golmeshor-dairy.vercel.app/"
             },
             {
               "title": "ToolForge",
