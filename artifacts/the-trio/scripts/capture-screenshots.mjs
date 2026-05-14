@@ -53,11 +53,11 @@ async function main() {
     try {
       const page = await context.newPage();
       await page.goto(project.url, {
-        waitUntil: "networkidle",
-        timeout: 30000,
+        waitUntil: "domcontentloaded",
+        timeout: 60000,
       });
-      // Extra wait for JS-rendered content
-      await page.waitForTimeout(2000);
+      // Extra wait for JS-rendered content and images
+      await page.waitForTimeout(4000);
       await page.screenshot({ path: filepath, type: "png" });
       await page.close();
 

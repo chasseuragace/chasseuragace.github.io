@@ -401,7 +401,8 @@
             {
               "title": "Golmeshor Dudh Dairy & Bakery",
               "description": "Modern full-stack e-commerce platform for a dairy business with admin panel, OTP ordering, and PWA support.",
-              "url": "https://golmeshor-dairy.vercel.app/"
+              "url": "https://golmeshor-dairy.vercel.app/",
+              "imageUrl": "/screenshots/golmeshor-dudh-dairy-bakery.png"
             },
             {
               "title": "ToolForge",
@@ -514,6 +515,24 @@
         "description": "The product intelligence and execution landing page. Domain-driven content, AI-assisted build pipeline, and a booking system connected to a Cloudflare Worker backend.",
         "url": "https://chasseuragace.github.io",
         "imageUrl": "/screenshots/trio-landing-this-website.png"
+      },
+      {
+        "title": "Mozzo Cafe",
+        "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
+        "url": "https://mozzocafe.netlify.app/",
+        "imageUrl": "/screenshots/mozzo-cafe.png"
+      },
+      {
+        "title": "Harshit Enterprises",
+        "description": "A professional business platform for enterprise operations and services, establishing strong digital authority.",
+        "url": "https://harshitentriprizes.netlify.app",
+        "imageUrl": "/screenshots/harshit-enterprises.png"
+      },
+      {
+        "title": "Cloud9 Cafe & Bar",
+        "description": "A sleek and atmospheric digital experience for a modern cafe and bar, driving reservations and engagement.",
+        "url": "https://cloud9cafenbar.netlify.app",
+        "imageUrl": "/screenshots/cloud9-cafe-bar.png"
       }
     ]
   },
