@@ -57,7 +57,7 @@ async function main() {
         timeout: 60000,
       });
       // Extra wait for JS-rendered content and images
-      await page.waitForTimeout(4000);
+      await page.waitForTimeout(14000);
       await page.screenshot({ path: filepath, type: "png" });
       await page.close();
 

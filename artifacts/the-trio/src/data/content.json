@@ -517,6 +517,18 @@
         "imageUrl": "/screenshots/trio-landing-this-website.png"
       },
       {
+        "title": "Feel Good Nepal",
+        "description": "Built around hospitality, Feel Good Nepal focuses on creating an atmosphere where people can slow down, relax, and genuinely enjoy their time together through comforting food and warm service.",
+        "url": "https://feelgoodnepal.netlify.app",
+        "imageUrl": "/screenshots/feel-good-nepal.png"
+      },
+      {
+        "title": "Taboche Cafe",
+        "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
+        "url": "https://taboche.netlify.app/",
+        "imageUrl": "/screenshots/taboche-cafe.png"
+      },
+      {
         "title": "Mozzo Cafe",
         "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
         "url": "https://mozzocafe.netlify.app/",
