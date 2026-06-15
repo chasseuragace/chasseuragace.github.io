@@ -439,6 +439,12 @@
               "description": "Mobile-first QR attendance system with offline-first capabilities.",
               "url": "https://smartyatt.netlify.app/",
               "imageUrl": "/screenshots/educational-attendance-tracking-system.png"
+            },
+            {
+              "title": "Rainbow Colour House",
+              "description": "Brand website for a professional painting services company — painting homes and spaces with passion, precision, and the full spectrum of possibility. Professional painting services that transform your world.",
+              "url": "https://rainbowcolour.com.np/",
+              "imageUrl": "/screenshots/rainbow-colour-house.png"
             }
           ]
         }
@@ -551,6 +557,18 @@
         "description": "A digital platform and informational presence for Shaligram Guru.",
         "url": "https://shaligram-guru.netlify.app",
         "imageUrl": "/screenshots/shaligram-guru.png"
+      },
+      {
+        "title": "The Smokehouse Nepal",
+        "description": "A rustic and inviting digital presence for a traditional smokehouse experience, featuring authentic flavors and warm hospitality.",
+        "url": "https://thesmokehousenepal.netlify.app",
+        "imageUrl": "/screenshots/the-smokehouse-nepal.png"
+      },
+      {
+        "title": "Olive Cafe Biratnagar",
+        "description": "A contemporary cafe website showcasing a diverse menu and cozy atmosphere in Biratnagar.",
+        "url": "https://olivecafebiratnagar.netlify.app",
+        "imageUrl": "/screenshots/olive-cafe-biratnagar.png"
       }
     ]
   },
