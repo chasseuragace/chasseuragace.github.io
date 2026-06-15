@@ -1,5 +1,29 @@
 [
   {
+    "slug": "design-patterns",
+    "title": "Design Patterns in Dart",
+    "date": "2026-06-10",
+    "excerpt": "All 23 Gang of Four patterns in Dart. For each one — what was going wrong, what the pattern fixes, and a minimal, runnable example. The wrong-way snippets are real patterns of pain, not strawmen."
+  },
+  {
+    "slug": "certificates-the-new-templates",
+    "title": "On Agile, AI, and the One Engineering Problem That Refuses to Die",
+    "date": "2026-05-31",
+    "excerpt": "The problem is whether the humans who can reason in a particular way are producing more humans who can reason the same way — or whether they are stepping into architectural roles, encoding their judgment, and quietly taking the generative structure of that judgment with them."
+  },
+  {
+    "slug": "navigating-ai-slop-for-vive-coders",
+    "title": "From Vibe Coder to Software Engineer: The Hill You Need to Climb",
+    "date": "2026-05-30",
+    "excerpt": "Vibe coding isn't the enemy. Vibe coding \"without architecture\" is the enemy."
+  },
+  {
+    "slug": "building-a-rag-pipeline",
+    "title": "The RAG System That Refuses to Hallucinate",
+    "date": "2026-05-20",
+    "excerpt": "I built a RAG system and tried to break it. I asked questions with no answers, injected false premises, demanded geography from a story that never named a country. It refused — gracefully, with citations. A journal entry about constraint-aware synthesis."
+  },
+  {
     "slug": "payment-system-architecture-for-multi-module-platforms",
     "title": "Payment System Architecture for Multi-Module Platforms",
     "date": "2026-04-09",
