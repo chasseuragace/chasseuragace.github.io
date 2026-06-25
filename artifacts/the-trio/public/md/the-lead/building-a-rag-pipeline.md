@@ -11,6 +11,10 @@ excerpt: I built a RAG system and tried to break it. I asked questions with no a
 
 ---
 
+> **Editor's note (June 2026):** This post describes the system as it stood on publication day — single-file, "clear and rebuild on every injection." That ingestion model has since been replaced with differential sync; the follow-up, *[The RAG System That Refuses to Go Stale](https://chasseuragace.github.io/the-lead/blog/rag-system-refuses-to-go-stale)*, explains why and how. To read the code exactly as it was when this post was written, see the [snapshot at commit `ba09577`](https://github.com/chasseuragace/RAG/commit/ba09577d9fe44a6e7073d26b5fd9e24bf730a6c2) (2026-05-20).
+
+---
+
 Most RAG demos I see are carefully staged. They ask the question, the LLM retrieves the right chunk, and the answer appears — clean, confident, and almost certainly over‑fitted to the example.
 
 I don't care about demos. I care about what happens when the system is *wrong*.

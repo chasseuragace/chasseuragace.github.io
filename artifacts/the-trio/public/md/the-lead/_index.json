@@ -1,5 +1,23 @@
 [
   {
+    "slug": "rag-system-refuses-to-go-stale",
+    "title": "The RAG System That Refuses to Go Stale",
+    "date": "2026-06-25",
+    "excerpt": "Last month I built a RAG system that refuses to hallucinate. Then a simpler question broke my own design — what happens when a client has a hundred documents and forty of them change every day? \"Clear and rebuild\" doesn't survive contact with that. A journal entry about the slower kind of lie."
+  },
+  {
+    "slug": "governance-as-a-feature",
+    "title": "Governance as a Feature: The Retail System That Can't Lie About Itself",
+    "date": "2026-06-24",
+    "excerpt": "Three weeks ago I called vibe-coded software a liability. This is the counter-proof — a multi-store retail platform AI wrote most of, built so its permissions, its documentation, and its money can't silently drift from reality. Including an honest account of what's still broken."
+  },
+  {
+    "slug": "the-balcony-pattern",
+    "title": "The Balcony Pattern: Building Deterministic Software With a Non-Deterministic Companion",
+    "date": "2026-06-15",
+    "excerpt": "Notes from building Piper — a voice layer that turned into a study of how humans and dumb-but-useful models actually collaborate. The deterministic layer's job is to hold the non-deterministic layer accountable to ground truth."
+  },
+  {
     "slug": "design-patterns",
     "title": "Design Patterns in Dart",
     "date": "2026-06-10",
