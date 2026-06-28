@@ -741,7 +741,7 @@ function CTASection({ onBookClick }: { onBookClick: () => void }) {
   );
 }
 
-function Footer({ onBookClick }: { onBookClick: () => void }) {
+function Footer() {
   return (
     <footer
       style={{
@@ -770,25 +770,6 @@ function Footer({ onBookClick }: { onBookClick: () => void }) {
         <p style={{ fontFamily: S.mono, fontSize: "12px", color: S.textGhost, textAlign: "center" }}>
           {content.footer.subtitle}
         </p>
-
-        <button
-          onClick={onBookClick}
-          style={{
-            border: `1px solid ${S.accent}`,
-            background: "transparent",
-            color: S.accent,
-            fontFamily: S.mono,
-            fontSize: "12px",
-            padding: "8px 20px",
-            cursor: "pointer",
-            transition: "all 200ms ease",
-            letterSpacing: "0.04em",
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = S.accent; e.currentTarget.style.color = S.bgPrimary; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = S.accent; }}
-        >
-          {content.footer.cta}
-        </button>
       </div>
 
       <div style={{ height: "1px", background: S.bgBorder, maxWidth: "1200px", margin: "0 auto 20px" }} />
@@ -814,7 +795,7 @@ export default function Landing() {
             <FrameworksSection />
             <CTASection onBookClick={openBooking} />
           </main>
-          <Footer onBookClick={openBooking} />
+          <Footer />
         </>
       )}
     </PageLayout>

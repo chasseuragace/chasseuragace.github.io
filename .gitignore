@@ -47,3 +47,4 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+artifacts/the-trio/data/mcp_evolution_log.json

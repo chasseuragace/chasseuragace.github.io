@@ -24,7 +24,14 @@
       "Bash(timeout 5 curl -X POST https://trio-worker.chasseuragace.workers.dev/api/bookings -H 'Content-Type: application/json' -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"company\":\"Test\",\"message\":\"test\"}')",
       "Bash(curl -X POST https://trio-worker.chasseuragace.workers.dev/api/bookings -H 'Content-Type: application/json' -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"company\":\"Test\",\"message\":\"test\"}' -i)",
       "Bash(curl *)",
-      "mcp__filesystem__list_directory"
+      "mcp__filesystem__list_directory",
+      "Bash(git checkout *)",
+      "Bash(git commit -q -m 'feat: add Rainbow Colour House to executor portfolio + restore screenshots *)",
+      "Bash(gh run *)",
+      "Bash(grep -E \"\\\\.md$\")",
+      "Read(//Volumes/shared_code/parlor-platform/**)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   },
   "enabledMcpjsonServers": [

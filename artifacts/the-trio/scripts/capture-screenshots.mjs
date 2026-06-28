@@ -1,5 +1,5 @@
 import { chromium } from "playwright";
-import { readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -51,22 +51,32 @@ async function main() {
     console.log(`    ${project.url}`);
 
     try {
+      // Skip if screenshot already exists
+      if (existsSync(filepath)) {
+        console.log(`    -> SKIP (exists)`);
+        continue;
+      }
+
       const page = await context.newPage();
       await page.goto(project.url, {
         waitUntil: "domcontentloaded",
         timeout: 60000,
       });
-      // Extra wait for JS-rendered content and images
-      await page.waitForTimeout(14000);
+      // Extra wait for JS-rendered content and images. The brand sites now play
+      // an intro: a brand splash overlay, then a ~7s hero "settle" zoom plus
+      // staggered content reveals. Wait long enough for everything to land at
+      // its final resting state before shooting.
+      await page.waitForTimeout(20000);
       await page.screenshot({ path: filepath, type: "png" });
       await page.close();
 
       // Update imageUrl in the project object
       project.imageUrl = `/screenshots/${filename}`;
-      console.log(`    -> ${filename}\n`);
+      console.log(`    -> ${filename}`);
     } catch (err) {
-      console.log(`    !! FAILED: ${err.message}\n`);
+      console.log(`    !! FAILED: ${err.message}`);
     }
+    console.log("");
   }
 
   await browser.close();
