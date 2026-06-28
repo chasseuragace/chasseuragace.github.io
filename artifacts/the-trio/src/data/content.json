@@ -569,6 +569,24 @@
         "description": "A contemporary cafe website showcasing a diverse menu and cozy atmosphere in Biratnagar.",
         "url": "https://olivecafebiratnagar.netlify.app",
         "imageUrl": "/screenshots/olive-cafe-biratnagar.png"
+      },
+      {
+        "title": "The Mandaar Café",
+        "description": "A quiet café tucked inside Biratnagar's Traffic Chowk, reimagining local café culture with handcrafted brews, specialty matcha, and cozy corners made for deep conversations or focused work.",
+        "url": "https://mandaarcafe.netlify.app",
+        "imageUrl": "/screenshots/the-mandaar-caf.png"
+      },
+      {
+        "title": "Na Pu Khu Café",
+        "description": "A hidden lakeside retreat in historic Bhaktapur, blending food, culture, and calm beside the centuries-old Na Pu Khu pond — a peaceful spot for dates, catch-ups, and slow evenings.",
+        "url": "https://napukhucafe.netlify.app",
+        "imageUrl": "/screenshots/na-pu-khu-caf.png"
+      },
+      {
+        "title": "Parlor Platform",
+        "description": "A booking platform that connects customers with parlors — turning walk-in salon services into a streamlined online experience. Customers book through a guided step-by-step flow while owners run their day from a live dashboard of today's, upcoming, and past appointments.",
+        "url": "https://parlor-platform-np.netlify.app/",
+        "imageUrl": "/screenshots/parlor-platform.png"
       }
     ]
   },
