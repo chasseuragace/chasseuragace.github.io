@@ -13,6 +13,23 @@ interface Project {
   imageUrl: string;
 }
 
+interface CaseStudyItem {
+  number: string;
+  label: string;
+  body: string;
+}
+
+interface Category {
+  id: string;
+  tabLabel: string;
+  caseStudy: {
+    label: string;
+    heading: string[];
+    items: CaseStudyItem[];
+  };
+  projects: Project[];
+}
+
 const membersWithPortfolio = content.trio.members.filter(
   (m: any) => m.page?.portfolio && m.page.portfolio.length > 0
 );
@@ -123,7 +140,91 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
+function CaseStudy({ caseStudy }: { caseStudy: Category["caseStudy"] }) {
+  return (
+    <ScrollReveal>
+      <p
+        style={{
+          fontFamily: S.mono,
+          fontSize: "11px",
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          color: S.accent,
+          marginBottom: "16px",
+        }}
+      >
+        {caseStudy.label}
+      </p>
+      <h3
+        style={{
+          fontFamily: S.serif,
+          fontSize: "clamp(26px, 3.2vw, 40px)",
+          lineHeight: 1.15,
+          color: S.textPrimary,
+          marginBottom: "40px",
+        }}
+      >
+        {caseStudy.heading.map((line, i) => (
+          <span key={i} style={{ display: "block" }}>{line}</span>
+        ))}
+      </h3>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "40px",
+          marginBottom: "64px",
+        }}
+        className="case-study-grid"
+      >
+        {caseStudy.items.map((item) => (
+          <div key={item.number} style={{ position: "relative" }}>
+            <span
+              style={{
+                position: "absolute",
+                top: "-6px",
+                left: "-4px",
+                fontFamily: S.mono,
+                fontSize: "48px",
+                color: S.textGhost,
+                lineHeight: 1,
+                userSelect: "none",
+                zIndex: 0,
+              }}
+              aria-hidden="true"
+            >
+              {item.number}
+            </span>
+            <div style={{ position: "relative", zIndex: 1, paddingTop: "34px" }}>
+              <p
+                style={{
+                  fontFamily: S.mono,
+                  fontSize: "11px",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: S.textSecondary,
+                  marginBottom: "10px",
+                }}
+              >
+                {item.label}
+              </p>
+              <p style={{ fontFamily: S.mono, fontSize: "14px", lineHeight: 1.7, color: S.textPrimary }}>
+                {item.body}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </ScrollReveal>
+  );
+}
+
 export default function Portfolio() {
+  const categories = portfolio.categories as Category[];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = categories[activeIndex];
+
   return (
     <PageLayout>
       {/* Trio-level portfolio */}
@@ -171,15 +272,62 @@ export default function Portfolio() {
                 lineHeight: 1.7,
                 color: S.textSecondary,
                 maxWidth: "560px",
-                marginBottom: "64px",
+                marginBottom: "56px",
               }}
             >
               {portfolio.subheading}
             </p>
           </ScrollReveal>
 
-          {portfolio.projects.length > 0 && (
+          <ScrollReveal>
             <div
+              style={{
+                display: "flex",
+                gap: "8px",
+                borderBottom: `1px solid ${S.bgBorder}`,
+                marginBottom: "56px",
+                flexWrap: "wrap",
+              }}
+              role="tablist"
+            >
+              {categories.map((category, i) => {
+                const isActive = i === activeIndex;
+                return (
+                  <button
+                    key={category.id}
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setActiveIndex(i)}
+                    style={{
+                      appearance: "none",
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      fontFamily: S.mono,
+                      fontSize: "12px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: isActive ? S.textPrimary : S.textSecondary,
+                      padding: "14px 4px",
+                      marginRight: "32px",
+                      borderBottom: `2px solid ${isActive ? S.accent : "transparent"}`,
+                      transition: "color 200ms ease, border-color 200ms ease",
+                    }}
+                  >
+                    {category.tabLabel}
+                  </button>
+                );
+              })}
+            </div>
+          </ScrollReveal>
+
+          <div style={{ marginBottom: "16px" }}>
+            <CaseStudy key={active.id} caseStudy={active.caseStudy} />
+          </div>
+
+          {active.projects.length > 0 && (
+            <div
+              key={active.id}
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
@@ -187,7 +335,7 @@ export default function Portfolio() {
               }}
               className="portfolio-grid"
             >
-              {portfolio.projects.map((project, i) => (
+              {active.projects.map((project, i) => (
                 <ScrollReveal key={project.title} delay={i * 0.08}>
                   <ProjectCard project={project} />
                 </ScrollReveal>

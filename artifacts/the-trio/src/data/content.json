@@ -514,79 +514,160 @@
     "heading": [
       "Built by the Trio."
     ],
-    "subheading": "Products we've shipped — from intake to deployment.",
-    "projects": [
+    "subheading": "Filed by how the work was shaped.",
+    "categories": [
       {
-        "title": "Trio Landing — This Website",
-        "description": "The product intelligence and execution landing page. Domain-driven content, AI-assisted build pipeline, and a booking system connected to a Cloudflare Worker backend.",
-        "url": "https://chasseuragace.github.io",
-        "imageUrl": "/screenshots/trio-landing-this-website.png"
+        "id": "hospitality",
+        "tabLabel": "Hospitality",
+        "caseStudy": {
+          "label": "Case Study — Hospitality",
+          "heading": ["One system,", "many venues."],
+          "items": [
+            {
+              "number": "01",
+              "label": "Why",
+              "body": "Cafés, bars, and restaurants need a real digital presence — menu, ambiance, story — but rarely have the budget or timeline for a bespoke build. The requirement is nearly the same shape every time: show the place, make it feel like the place, get people through the door."
+            },
+            {
+              "number": "02",
+              "label": "How",
+              "body": "Built once as a repeatable system rather than reinvented per client. Same underlying framework and build pipeline; only the content shifts — menu, photography, voice, and layout emphasis per venue. New venues ship against that same system, not a new architecture."
+            },
+            {
+              "number": "03",
+              "label": "Where It's Heading",
+              "body": "The pattern that emerged from repetition — one system serving many independent venues — is the same shape the Multi-Tenant work formalizes. Hospitality is where the idea proved itself before it became a platform."
+            }
+          ]
+        },
+        "projects": [
+          {
+            "title": "Feel Good Nepal",
+            "description": "Built around hospitality, Feel Good Nepal focuses on creating an atmosphere where people can slow down, relax, and genuinely enjoy their time together through comforting food and warm service.",
+            "url": "https://feelgoodnepal.netlify.app",
+            "imageUrl": "/screenshots/feel-good-nepal.png"
+          },
+          {
+            "title": "Taboche Cafe",
+            "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
+            "url": "https://taboche.netlify.app/",
+            "imageUrl": "/screenshots/taboche-cafe.png"
+          },
+          {
+            "title": "Mozzo Cafe",
+            "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
+            "url": "https://mozzocafe.netlify.app/",
+            "imageUrl": "/screenshots/mozzo-cafe.png"
+          },
+          {
+            "title": "Cloud9 Cafe & Bar",
+            "description": "A sleek and atmospheric digital experience for a modern cafe and bar, driving reservations and engagement.",
+            "url": "https://cloud9cafenbar.netlify.app",
+            "imageUrl": "/screenshots/cloud9-cafe-bar.png"
+          },
+          {
+            "title": "The Smokehouse Nepal",
+            "description": "A rustic and inviting digital presence for a traditional smokehouse experience, featuring authentic flavors and warm hospitality.",
+            "url": "https://thesmokehousenepal.netlify.app",
+            "imageUrl": "/screenshots/the-smokehouse-nepal.png"
+          },
+          {
+            "title": "Olive Cafe Biratnagar",
+            "description": "A contemporary cafe website showcasing a diverse menu and cozy atmosphere in Biratnagar.",
+            "url": "https://olivecafebiratnagar.netlify.app",
+            "imageUrl": "/screenshots/olive-cafe-biratnagar.png"
+          },
+          {
+            "title": "The Mandaar Café",
+            "description": "A quiet café tucked inside Biratnagar's Traffic Chowk, reimagining local café culture with handcrafted brews, specialty matcha, and cozy corners made for deep conversations or focused work.",
+            "url": "https://mandaarcafe.netlify.app",
+            "imageUrl": "/screenshots/the-mandaar-caf.png"
+          },
+          {
+            "title": "Na Pu Khu Café",
+            "description": "A hidden lakeside retreat in historic Bhaktapur, blending food, culture, and calm beside the centuries-old Na Pu Khu pond — a peaceful spot for dates, catch-ups, and slow evenings.",
+            "url": "https://napukhucafe.netlify.app",
+            "imageUrl": "/screenshots/na-pu-khu-caf.png"
+          }
+        ]
       },
       {
-        "title": "Feel Good Nepal",
-        "description": "Built around hospitality, Feel Good Nepal focuses on creating an atmosphere where people can slow down, relax, and genuinely enjoy their time together through comforting food and warm service.",
-        "url": "https://feelgoodnepal.netlify.app",
-        "imageUrl": "/screenshots/feel-good-nepal.png"
+        "id": "client-freelance",
+        "tabLabel": "Client Freelance",
+        "caseStudy": {
+          "label": "Case Study — Client Freelance",
+          "heading": ["Bespoke,", "on request."],
+          "items": [
+            {
+              "number": "01",
+              "label": "Why",
+              "body": "Not every request fits a template. An enterprise services company, a spiritual information platform, and this landing page itself — each has its own domain, audience, and constraints that don't reduce to 'venue website.'"
+            },
+            {
+              "number": "02",
+              "label": "How",
+              "body": "Each build starts from the client's actual domain, not a starting template. Information architecture, content, and design are worked out case by case, from scratch."
+            },
+            {
+              "number": "03",
+              "label": "Where It's Heading",
+              "body": "These stay one-off by nature — the value here isn't repeatability, it's range: proving the same execution capability holds whether the client is an enterprise, a spiritual platform, or the Trio's own product."
+            }
+          ]
+        },
+        "projects": [
+          {
+            "title": "Harshit Enterprises",
+            "description": "A professional business platform for enterprise operations and services, establishing strong digital authority.",
+            "url": "https://harshitentriprizes.netlify.app",
+            "imageUrl": "/screenshots/harshit-enterprises.png"
+          },
+          {
+            "title": "Shaligram Guru",
+            "description": "A digital platform and informational presence for Shaligram Guru.",
+            "url": "https://shaligram-guru.netlify.app",
+            "imageUrl": "/screenshots/shaligram-guru.png"
+          },
+          {
+            "title": "Trio Landing — This Website",
+            "description": "The product intelligence and execution landing page. Domain-driven content, AI-assisted build pipeline, and a booking system connected to a Cloudflare Worker backend.",
+            "url": "https://chasseuragace.github.io",
+            "imageUrl": "/screenshots/trio-landing-this-website.png"
+          }
+        ]
       },
       {
-        "title": "Taboche Cafe",
-        "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
-        "url": "https://taboche.netlify.app/",
-        "imageUrl": "/screenshots/taboche-cafe.png"
-      },
-      {
-        "title": "Mozzo Cafe",
-        "description": "A modern, welcoming digital presence for a vibrant cafe. Built to showcase the menu, ambiance, and community.",
-        "url": "https://mozzocafe.netlify.app/",
-        "imageUrl": "/screenshots/mozzo-cafe.png"
-      },
-      {
-        "title": "Harshit Enterprises",
-        "description": "A professional business platform for enterprise operations and services, establishing strong digital authority.",
-        "url": "https://harshitentriprizes.netlify.app",
-        "imageUrl": "/screenshots/harshit-enterprises.png"
-      },
-      {
-        "title": "Cloud9 Cafe & Bar",
-        "description": "A sleek and atmospheric digital experience for a modern cafe and bar, driving reservations and engagement.",
-        "url": "https://cloud9cafenbar.netlify.app",
-        "imageUrl": "/screenshots/cloud9-cafe-bar.png"
-      },
-      {
-        "title": "Shaligram Guru",
-        "description": "A digital platform and informational presence for Shaligram Guru.",
-        "url": "https://shaligram-guru.netlify.app",
-        "imageUrl": "/screenshots/shaligram-guru.png"
-      },
-      {
-        "title": "The Smokehouse Nepal",
-        "description": "A rustic and inviting digital presence for a traditional smokehouse experience, featuring authentic flavors and warm hospitality.",
-        "url": "https://thesmokehousenepal.netlify.app",
-        "imageUrl": "/screenshots/the-smokehouse-nepal.png"
-      },
-      {
-        "title": "Olive Cafe Biratnagar",
-        "description": "A contemporary cafe website showcasing a diverse menu and cozy atmosphere in Biratnagar.",
-        "url": "https://olivecafebiratnagar.netlify.app",
-        "imageUrl": "/screenshots/olive-cafe-biratnagar.png"
-      },
-      {
-        "title": "The Mandaar Café",
-        "description": "A quiet café tucked inside Biratnagar's Traffic Chowk, reimagining local café culture with handcrafted brews, specialty matcha, and cozy corners made for deep conversations or focused work.",
-        "url": "https://mandaarcafe.netlify.app",
-        "imageUrl": "/screenshots/the-mandaar-caf.png"
-      },
-      {
-        "title": "Na Pu Khu Café",
-        "description": "A hidden lakeside retreat in historic Bhaktapur, blending food, culture, and calm beside the centuries-old Na Pu Khu pond — a peaceful spot for dates, catch-ups, and slow evenings.",
-        "url": "https://napukhucafe.netlify.app",
-        "imageUrl": "/screenshots/na-pu-khu-caf.png"
-      },
-      {
-        "title": "Parlor Platform",
-        "description": "A booking platform that connects customers with parlors — turning walk-in salon services into a streamlined online experience. Customers book through a guided step-by-step flow while owners run their day from a live dashboard of today's, upcoming, and past appointments.",
-        "url": "https://parlor-platform-np.netlify.app/",
-        "imageUrl": "/screenshots/parlor-platform.png"
+        "id": "multi-tenant",
+        "tabLabel": "Multi-Tenant",
+        "caseStudy": {
+          "label": "Case Study — Multi-Tenant",
+          "heading": ["From a website,", "to a platform."],
+          "items": [
+            {
+              "number": "01",
+              "label": "Why",
+              "body": "A single-venue website solves presence, not operations. Parlor owners didn't need another page — they needed a way to actually run bookings, day to day."
+            },
+            {
+              "number": "02",
+              "label": "How",
+              "body": "Built as one platform serving many parlor owners, not one site per owner. Customers book through a guided step-by-step flow; each owner runs their day from a live dashboard of today's, upcoming, and past appointments — same system, many tenants."
+            },
+            {
+              "number": "03",
+              "label": "Where It's Heading",
+              "body": "This is the direction the Hospitality work points toward — fewer bespoke venue sites, more shared platforms that give owners real operational leverage instead of just a page."
+            }
+          ]
+        },
+        "projects": [
+          {
+            "title": "Parlor Platform",
+            "description": "A booking platform that connects customers with parlors — turning walk-in salon services into a streamlined online experience. Customers book through a guided step-by-step flow while owners run their day from a live dashboard of today's, upcoming, and past appointments.",
+            "url": "https://parlor-platform-np.netlify.app/",
+            "imageUrl": "/screenshots/parlor-platform.png"
+          }
+        ]
       }
     ]
   },

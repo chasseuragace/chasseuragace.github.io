@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -469,10 +469,16 @@ function BlogSection({ member, page }: { member: Member; page: Page }) {
     },
   });
 
+  useEffect(() => {
+    if (isLoading || window.location.hash !== "#writing") return;
+    document.getElementById("writing")?.scrollIntoView();
+  }, [isLoading]);
+
   if (!isLoading && posts.length === 0) return null;
 
   return (
     <section
+      id="writing"
       style={{
         background: S.bgPrimary,
         padding: `120px ${PAD}`,

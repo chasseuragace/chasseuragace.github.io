@@ -225,6 +225,11 @@ body {
   .portfolio-member-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
+  .case-study-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
 }
 
 /* Mobile nav breakpoint */
