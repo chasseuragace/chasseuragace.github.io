@@ -1,5 +1,11 @@
 [
   {
+    "slug": "the-second-loop-closes",
+    "title": "The Second Loop Closes: When the Observed Talks Back",
+    "date": "2026-07-03",
+    "excerpt": "The sequel to the Balcony Pattern. The observer used to fire verdicts into the void and never learn if it was right. Closing that loop meant designing a protocol between minds of unequal ability — and discovering that the schema is a prompt, feedback must inform but never override, and a loop that labels its own output can start to grade itself."
+  },
+  {
     "slug": "rag-system-refuses-to-go-stale",
     "title": "The RAG System That Refuses to Go Stale",
     "date": "2026-06-25",

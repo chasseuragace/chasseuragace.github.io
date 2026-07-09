@@ -150,3 +150,5 @@ We didn't have that problem in 2020. We have it now. Let's smile at it. 🙂
 ---
 
 *Piper is built in Dart: an MCP server, a zero-token git "balcony" observer, a stateful trip ledger, a three-pass tiered judge (cloud + on-device), and a speech normalizer. If the architecture is interesting to you, the next post will be the feedback loop — and the eval that decides its schema by evidence instead of intuition.*
+
+*→ Part two is up: [The Second Loop Closes](https://chasseuragace.github.io/the-lead/blog/the-second-loop-closes) — the loop got built, and the prediction held.*
