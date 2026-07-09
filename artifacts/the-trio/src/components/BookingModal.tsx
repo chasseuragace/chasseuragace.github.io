@@ -44,7 +44,7 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch("/api/bookings", {
+      const response = await fetch("https://trio-worker.chasseuragace.workers.dev/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
