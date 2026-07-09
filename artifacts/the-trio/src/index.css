@@ -203,7 +203,7 @@ body {
   }
 
   .system-pipeline {
-    display: none !important;
+    margin-top: 8px !important;
   }
 
   .trio-grid {

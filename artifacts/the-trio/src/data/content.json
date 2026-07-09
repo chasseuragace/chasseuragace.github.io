@@ -10,7 +10,7 @@
       "We deliver the",
       "right product."
     ],
-    "body": "A few structured conversations with the Trio and the system does the rest — research, validation, prototype, and a product direction you can trust.",
+    "body": "The Trio is three people — one who models the problem, one who bridges design to code, one who builds it fast. A few structured conversations and the system does the rest: research, validation, prototype, and a product direction you can trust.",
     "cta1": "Book a Session →",
     "cta2": "See How It Works ↓"
   },
@@ -94,32 +94,14 @@
         "footer": "Your product, positioned from day one."
       }
     ],
-    "pipeline": [
-      "┌─────────────────────────┐",
-      "│  CLIENT INTAKE          │",
-      "│  domain context         │",
-      "│  constraints + goals    │",
-      "└──────────┬──────────────┘",
-      "           │",
-      "     ┌─────▼──────┐",
-      "     │  AI SYSTEM  │",
-      "     │  research   │",
-      "     │  synthesis  │",
-      "     │  modeling   │",
-      "     └─────┬───────┘",
-      "           │",
-      "    ┌──────▼──────┐   ┌──────────────┐",
-      "    │  THE TRIO   │◄──│  DOMAIN      │",
-      "    │  sessions   │   │  EXPERTISE   │",
-      "    │  + build    │   │  (emergent)  │",
-      "    └──────┬──────┘   └──────────────┘",
-      "           │",
-      "    ┌──────▼──────┐",
-      "    │  PRODUCT    │",
-      "    │  + market   │",
-      "    │  framing    │",
-      "    └─────────────┘"
-    ]
+    "flow": {
+      "nodes": [
+        { "title": "Client Intake", "lines": ["domain context", "constraints + goals"] },
+        { "title": "AI System", "lines": ["research", "synthesis", "modeling"] },
+        { "title": "The Trio", "lines": ["sessions + build"], "aside": { "title": "Domain Expertise", "lines": ["emergent"] } },
+        { "title": "Product", "lines": ["+ market framing"] }
+      ]
+    }
   },
   "trio": {
     "label": "The People",
@@ -135,6 +117,7 @@
         "navLabel": "THE LEAD",
         "role": "The Lead",
         "title": "System Architect",
+        "plain": "Figures out what actually needs to be built — and why.",
         "body": "Thinks in systems before he thinks in code. The Lead's role is conceptual integrity — ensuring that what gets built reflects reality accurately, not just what the client requested.\n\nHe is the primary knowledge cruncher in every intake session. The one who, by the session's end, can say with confidence: this is what you need, and this is why.",
         "tags": [
           "Domain Modeling",
@@ -221,6 +204,7 @@
         "navLabel": "THE APPRENTICE",
         "role": "The Apprentice",
         "title": "Integrator",
+        "plain": "Makes sure the plan survives contact with real code.",
         "body": "Lives at the intersection of classical and agentic development. He has written production code in the traditional sense and orchestrated AI agents in the new sense — and crucially, understands the difference between them.\n\nThe Apprentice ensures that the Lead's domain model survives contact with implementation, and that the Brute's output meets the standard the model requires.",
         "tags": [
           "Agentic Systems",
@@ -307,6 +291,7 @@
         "navLabel": "THE BRUTE",
         "role": "The Brute",
         "title": "Executor",
+        "plain": "Turns the spec into a working product, fast.",
         "body": "No vocabulary of classical programming. Total fluency in AI-native execution. Given a specification, the Brute owns the process of producing it — rapidly, reliably, using the full capability of agentic development tools.\n\nPrimarily: UI, interaction, and frontend. With specification from the Lead or Apprentice: backend and infrastructure. This scope expands as the tools do.",
         "tags": [
           "UI Execution",

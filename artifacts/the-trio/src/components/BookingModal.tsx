@@ -17,10 +17,12 @@ interface FormData {
 
 export function BookingModal({ open, onClose }: BookingModalProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
   const firstInputRef = useRef<HTMLInputElement>(null);
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<FormData>();
+  const selectedStage = watch("stage");
 
   useEffect(() => {
     if (open) {
@@ -43,6 +45,7 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
 
 
   const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
     try {
       const response = await fetch("https://trio-worker.chasseuragace.workers.dev/api/bookings", {
         method: "POST",
@@ -72,6 +75,8 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
       console.error("Booking submission error:", error);
       // Provide a more specific error message if possible, or a general one
       alert("Failed to submit booking. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -98,6 +103,29 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
     marginBottom: "8px",
   };
 
+  const errorTextStyle: React.CSSProperties = {
+    fontFamily: "'DM Mono', monospace",
+    fontSize: "11px",
+    color: "#8B3A3A",
+    marginTop: "6px",
+    display: "block",
+  };
+
+  const chipStyle = (selected: boolean, errored: boolean): React.CSSProperties => ({
+    position: "relative",
+    display: "inline-flex",
+    alignItems: "center",
+    fontFamily: "'DM Mono', monospace",
+    fontSize: "13px",
+    padding: "10px 16px",
+    border: "1px solid",
+    borderColor: errored ? "#8B3A3A" : selected ? "#C8A96E" : "#222222",
+    background: selected ? "#C8A96E" : "#0A0A0A",
+    color: selected ? "#0A0A0A" : "#F0EDE6",
+    cursor: "pointer",
+    transition: "all 200ms ease",
+  });
+
   return (
     <AnimatePresence>
       {open && (
@@ -116,6 +144,7 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
             alignItems: "center",
             justifyContent: "center",
             padding: "24px",
+            overflowY: "auto",
           }}
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
@@ -137,6 +166,9 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
               width: "100%",
               maxWidth: "520px",
               position: "relative",
+              margin: "auto",
+              maxHeight: "calc(100vh - 48px)",
+              overflowY: "auto",
             }}
           >
             <button
@@ -164,7 +196,7 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
                 fontFamily: "'DM Serif Display', serif",
                 fontSize: "28px",
                 color: "#F0EDE6",
-                marginBottom: "32px",
+                marginBottom: "12px",
                 lineHeight: 1.15,
               }}
             >
@@ -186,104 +218,126 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
                 <p>{content.modal.confirmMessage}</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                <div style={{ marginBottom: "24px" }}>
-                  <label htmlFor="name" style={labelStyle}>Name</label>
-                  <input
-                    id="name"
-                    {...register("name", { required: "Name is required" })}
-                    ref={(e) => {
-                      register("name").ref(e);
-                      firstInputRef.current = e;
-                    }}
-                    style={{ ...inputStyle, borderColor: errors.name ? "#8B3A3A" : "#222222" }}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = errors.name ? "#8B3A3A" : "#222222"; }}
-                  />
-                  {errors.name && (
-                    <span aria-live="polite" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B3A3A", marginTop: "6px", display: "block" }}>
-                      {errors.name.message}
-                    </span>
-                  )}
-                </div>
-
-                <div style={{ marginBottom: "24px" }}>
-                  <label htmlFor="email" style={labelStyle}>Email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Valid email required" }
-                    })}
-                    style={{ ...inputStyle, borderColor: errors.email ? "#8B3A3A" : "#222222" }}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = errors.email ? "#8B3A3A" : "#222222"; }}
-                  />
-                  {errors.email && (
-                    <span aria-live="polite" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B3A3A", marginTop: "6px", display: "block" }}>
-                      {errors.email.message}
-                    </span>
-                  )}
-                </div>
-
-                <div style={{ marginBottom: "24px" }}>
-                  <label htmlFor="context" style={labelStyle}>What are you working on?</label>
-                  <textarea
-                    id="context"
-                    rows={4}
-                    {...register("context", { required: "Context is required" })}
-                    style={{ ...inputStyle, resize: "vertical", borderColor: errors.context ? "#8B3A3A" : "#222222" }}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = errors.context ? "#8B3A3A" : "#222222"; }}
-                  />
-                  {errors.context && (
-                    <span aria-live="polite" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B3A3A", marginTop: "6px", display: "block" }}>
-                      {errors.context.message}
-                    </span>
-                  )}
-                </div>
-
-                <div style={{ marginBottom: "36px" }}>
-                  <label htmlFor="stage" style={labelStyle}>Where is it at?</label>
-                  <select
-                    id="stage"
-                    {...register("stage", { required: true })}
-                    style={{ ...inputStyle, appearance: "none", cursor: "pointer", borderColor: "#222222" }}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "#222222"; }}
-                  >
-                    <option value="" style={{ background: "#0A0A0A" }}>Select a stage</option>
-                    {content.modal.stageOptions.map((opt) => (
-                      <option key={opt} value={opt} style={{ background: "#0A0A0A" }}>{opt}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <button
-                  type="submit"
+              <>
+                <p
                   style={{
-                    background: "#C8A96E",
-                    color: "#0A0A0A",
-                    border: "none",
                     fontFamily: "'DM Mono', monospace",
-                    fontSize: "14px",
-                    padding: "14px 36px",
-                    cursor: "pointer",
-                    width: "100%",
-                    transition: "background 200ms ease",
-                    letterSpacing: "0.04em",
+                    fontSize: "12px",
+                    color: "#888880",
+                    marginBottom: "28px",
+                    lineHeight: 1.6,
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "#7A6340"; e.currentTarget.style.color = "#F0EDE6"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "#C8A96E"; e.currentTarget.style.color = "#0A0A0A"; }}
                 >
-                  {content.modal.submitButton}
-                </button>
-
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#888880", textAlign: "center", marginTop: "16px" }}>
-                  {content.modal.confirmMessage}
+                  Takes about 2 minutes. {content.modal.confirmMessage}
                 </p>
-              </form>
+
+                <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                  <div style={{ marginBottom: "24px" }}>
+                    <label htmlFor="name" style={labelStyle}>Do you have a name?</label>
+                    <input
+                      id="name"
+                      {...register("name", { required: "Name is required" })}
+                      ref={(e) => {
+                        register("name").ref(e);
+                        firstInputRef.current = e;
+                      }}
+                      style={{ ...inputStyle, borderColor: errors.name ? "#8B3A3A" : "#222222" }}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = errors.name ? "#8B3A3A" : "#222222"; }}
+                    />
+                    {errors.name && (
+                      <span aria-live="polite" style={errorTextStyle}>
+                        {errors.name.message}
+                      </span>
+                    )}
+                  </div>
+
+                  <div style={{ marginBottom: "24px" }}>
+                    <label htmlFor="email" style={labelStyle}>Your email so I can write back to you</label>
+                    <input
+                      id="email"
+                      type="email"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Valid email required" }
+                      })}
+                      style={{ ...inputStyle, borderColor: errors.email ? "#8B3A3A" : "#222222" }}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = errors.email ? "#8B3A3A" : "#222222"; }}
+                    />
+                    {errors.email && (
+                      <span aria-live="polite" style={errorTextStyle}>
+                        {errors.email.message}
+                      </span>
+                    )}
+                  </div>
+
+                  <div style={{ marginBottom: "24px" }}>
+                    <label htmlFor="context" style={labelStyle}>A little context so I know where we're headed</label>
+                    <textarea
+                      id="context"
+                      rows={4}
+                      placeholder="e.g. I want a website for my cafe…"
+                      {...register("context", { required: "Context is required" })}
+                      style={{ ...inputStyle, resize: "vertical", borderColor: errors.context ? "#8B3A3A" : "#222222" }}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = "#C8A96E"; }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = errors.context ? "#8B3A3A" : "#222222"; }}
+                    />
+                    {errors.context && (
+                      <span aria-live="polite" style={errorTextStyle}>
+                        {errors.context.message}
+                      </span>
+                    )}
+                  </div>
+
+                  <div style={{ marginBottom: "36px" }}>
+                    <label style={labelStyle}>Where are you standing right now?</label>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                      {content.modal.stageOptions.map((opt) => {
+                        const selected = selectedStage === opt;
+                        return (
+                          <label key={opt} style={chipStyle(selected, !!errors.stage && !selected)}>
+                            <input
+                              type="radio"
+                              value={opt}
+                              {...register("stage", { required: "Please select a stage" })}
+                              style={{ position: "absolute", width: "1px", height: "1px", opacity: 0, pointerEvents: "none" }}
+                            />
+                            {opt}
+                          </label>
+                        );
+                      })}
+                    </div>
+                    {errors.stage && (
+                      <span aria-live="polite" style={errorTextStyle}>
+                        {errors.stage.message}
+                      </span>
+                    )}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    style={{
+                      background: isSubmitting ? "#3A3A35" : "#C8A96E",
+                      color: isSubmitting ? "#888880" : "#0A0A0A",
+                      border: "none",
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: "14px",
+                      padding: "14px 36px",
+                      cursor: isSubmitting ? "not-allowed" : "pointer",
+                      width: "100%",
+                      transition: "background 200ms ease",
+                      letterSpacing: "0.04em",
+                      opacity: isSubmitting ? 0.7 : 1,
+                    }}
+                    onMouseEnter={(e) => { if (!isSubmitting) { e.currentTarget.style.background = "#7A6340"; e.currentTarget.style.color = "#F0EDE6"; } }}
+                    onMouseLeave={(e) => { if (!isSubmitting) { e.currentTarget.style.background = "#C8A96E"; e.currentTarget.style.color = "#0A0A0A"; } }}
+                  >
+                    {isSubmitting ? "Sending…" : content.modal.submitButton}
+                  </button>
+                </form>
+              </>
             )}
           </motion.div>
         </motion.div>
@@ -291,4 +345,3 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
     </AnimatePresence>
   );
 }
-

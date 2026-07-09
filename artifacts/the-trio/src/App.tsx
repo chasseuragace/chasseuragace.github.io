@@ -18,8 +18,9 @@ function AppContent() {
       delete sessionStorage.redirect;
       // Extract the path from the full URL
       const url = new URL(redirect);
-      // Replace the history to clean up
-      window.history.replaceState(null, "", url.pathname);
+      // Replace the history to clean up — keep search + hash so deep links
+      // like /the-lead#writing survive the GitHub Pages 404 redirect.
+      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
     }
   }, []);
 

@@ -38,12 +38,21 @@ try {
   process.exit(1);
 }
 
-// Step 3: Check if dist/public exists
-const distPath = path.join(projectRoot, "dist", "public");
-if (!fs.existsSync(distPath)) {
-  console.error("❌ Build output not found at", distPath);
-  process.exit(1);
-}
+  // Step 3: Check if dist/public exists
+  const distPath = path.join(projectRoot, "dist", "public");
+  if (!fs.existsSync(distPath)) {
+    console.error("❌ Build output not found at", distPath);
+    process.exit(1);
+  }
+
+  // Step 3.5: Generate an SPA 404 fallback by copying the built index.html
+  // to 404.html. This lets client-side routes (e.g. /the-apprentice) serve
+  // the app directly instead of flashing the "Redirecting..." page.
+  fs.copyFileSync(
+    path.join(distPath, "index.html"),
+    path.join(distPath, "404.html"),
+  );
+  console.log("✅ SPA 404 fallback generated (404.html -> index.html)\n");
 
 // Step 4: Create a temporary gh-pages branch or use existing
 console.log("📤 Preparing to push to GitHub Pages...");

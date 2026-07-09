@@ -399,6 +399,74 @@ function StageCard({ stage, index, lineInView }: { stage: typeof content.process
   );
 }
 
+type FlowNodeData = { title: string; lines?: string[]; aside?: { title: string; lines?: string[] } };
+
+function FlowBox({ node, primary }: { node: { title: string; lines?: string[] }; primary?: boolean }) {
+  return (
+    <div
+      style={{
+        border: `1px solid ${primary ? S.accentDim : S.bgBorder}`,
+        background: S.bgPrimary,
+        padding: "16px 22px",
+        minWidth: "170px",
+        textAlign: "center",
+      }}
+    >
+      <p
+        style={{
+          fontFamily: S.mono,
+          fontSize: "12px",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: primary ? S.accent : S.textMid,
+          marginBottom: node.lines?.length ? "8px" : 0,
+        }}
+      >
+        {node.title}
+      </p>
+      {node.lines?.map((line) => (
+        <p key={line} style={{ fontFamily: S.mono, fontSize: "12px", lineHeight: 1.6, color: S.textSecondary }}>
+          {line}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+function FlowConnector() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "8px 0" }} aria-hidden="true">
+      <div style={{ width: "1px", height: "22px", background: S.accentDim }} />
+      <span style={{ fontFamily: S.mono, fontSize: "12px", color: S.accent, lineHeight: 1, marginTop: "-3px" }}>▼</span>
+    </div>
+  );
+}
+
+function PipelineFlow() {
+  const nodes = content.system.flow.nodes as FlowNodeData[];
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      {nodes.map((node, i) => (
+        <div key={node.title} style={{ display: "contents" }}>
+          {node.aside ? (
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", gap: "4px" }}>
+              <FlowBox node={node} primary />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <span style={{ fontFamily: S.mono, fontSize: "13px", color: S.accent, padding: "0 2px" }} aria-hidden="true">◄</span>
+                <div style={{ width: "20px", height: "1px", background: S.accentDim }} aria-hidden="true" />
+                <FlowBox node={node.aside} />
+              </div>
+            </div>
+          ) : (
+            <FlowBox node={node} primary />
+          )}
+          {i < nodes.length - 1 && <FlowConnector />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function SystemSection() {
   return (
     <section
@@ -458,22 +526,10 @@ function SystemSection() {
               style={{
                 background: S.bgCard,
                 border: `1px solid ${S.bgBorder}`,
-                padding: "32px",
-                overflowX: "auto",
+                padding: "40px 32px",
               }}
             >
-              <pre
-                style={{
-                  fontFamily: S.mono,
-                  fontSize: "12px",
-                  lineHeight: 1.6,
-                  color: S.textGhost,
-                  margin: 0,
-                  whiteSpace: "pre",
-                }}
-              >
-                {content.system.pipeline.join("\n")}
-              </pre>
+              <PipelineFlow />
             </div>
           </ScrollReveal>
         </div>
@@ -558,9 +614,13 @@ function MemberCard({ member }: { member: typeof content.trio.members[0] }) {
       <p style={{ fontFamily: S.mono, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: S.textSecondary, marginBottom: "10px" }}>
         {member.role}
       </p>
-      <h3 style={{ fontFamily: S.serif, fontSize: "26px", color: S.textPrimary, marginBottom: "20px", lineHeight: 1.1 }}>
+      <h3 style={{ fontFamily: S.serif, fontSize: "26px", color: S.textPrimary, marginBottom: "16px", lineHeight: 1.1 }}>
         {member.title}
       </h3>
+
+      <p style={{ fontFamily: S.mono, fontSize: "14px", lineHeight: 1.5, color: S.accent, marginBottom: "20px" }}>
+        {member.plain}
+      </p>
 
       <div style={{ height: "1px", background: S.bgBorder, marginBottom: "20px" }} />
 
