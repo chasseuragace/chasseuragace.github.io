@@ -668,7 +668,45 @@
             "imageUrl": "/screenshots/parlor-platform.png"
           }
         ]
+      },
+     
+{
+  "id": "end-to-end",
+  "tabLabel": "End-to-End",
+  "caseStudy": {
+    "label": "Case Study — End-to-End",
+    "heading": [
+      "From uncertainty to operational clarity,"
+    ],
+    "items": [
+      {
+        "number": "01",
+        "label": "Why",
+        "body": "Multi-outlet retailers in Biratnagar often rely on phone calls, spreadsheets, and manual reconciliation to understand sales, stock, and store performance. As more outlets are added, inventory transfers, procurement, staff permissions, discounts, and IRD compliance become difficult to coordinate, leaving owners with delayed decisions instead of real-time visibility."
+      },
+      {
+        "number": "02",
+        "label": "How",
+        "body": "Built as a single retail management platform serving every outlet from one system. Cashiers use a streamlined POS terminal, managers oversee procurement and stock transfers, warehouse teams handle inventory movement, accountants work from an append-only financial ledger, and owners monitor every store through a live dashboard. Role-based access, approval workflows, inventory validation, discount controls, audit trails, and IRD-ready operations keep every part of the business connected."
+      },
+      {
+        "number": "03",
+        "label": "Where It's Heading",
+        "body": "This represents the future of retail software—moving beyond standalone POS systems into complete operational platforms where sales, inventory, finance, compliance, and decision-making operate from a single source of truth across every outlet."
       }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Caliber Retail Management",
+      "description": "A multi-outlet retail management platform that gives business owners complete visibility across every store. It combines POS, inventory, procurement, stock transfers, role-based access, approval workflows, discount management, audit trails, financial reporting, and IRD-ready operations into one unified system.",
+      "url": "https://retail-268.netlify.app/",
+      "imageUrl": "/screenshots/retail.png"
+    }
+  ]
+}
+
+
     ]
   },
   "cta": {
