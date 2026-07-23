@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "the-graduation",
+    "title": "The RAG System That Finally Stopped Writing Code It Already Built",
+    "date": "2026-07-23",
+    "excerpt": "I built a RAG system that refuses to hallucinate and another that refuses to go stale. Then I looked at the stack and realized I was about to write eighty percent of a framework that already exists. The engine was never the product. A journal entry about graduating the POC."
+  },
+  {
+    "slug": "one-pattern-every-vibe-coder-should-know",
+    "title": "One Pattern Every Vibe Coder Should Know: Stop Duplicate Writes",
+    "date": "2026-07-12",
+    "excerpt": "You're building the whole stack and most of it works — until two requests arrive in the same millisecond. The thing that breaks first is concurrency. Here's the one pattern that fixes it, and the exact keywords to drop into your prompt so your agent writes it for you."
+  },
+  {
+    "slug": "the-second-loop-closes",
+    "title": "The Second Loop Closes: When the Observed Talks Back",
+    "date": "2026-07-03",
+    "excerpt": "The sequel to the Balcony Pattern. The observer used to fire verdicts into the void and never learn if it was right. Closing that loop meant designing a protocol between minds of unequal ability — and discovering that the schema is a prompt, feedback must inform but never override, and a loop that labels its own output can start to grade itself."
+  },
+  {
+    "slug": "rag-system-refuses-to-go-stale",
+    "title": "The RAG System That Refuses to Go Stale",
+    "date": "2026-06-25",
+    "excerpt": "Last month I built a RAG system that refuses to hallucinate. Then a simpler question broke my own design — what happens when a client has a hundred documents and forty of them change every day? \"Clear and rebuild\" doesn't survive contact with that. A journal entry about the slower kind of lie."
+  },
+  {
+    "slug": "governance-as-a-feature",
+    "title": "Governance as a Feature: The Retail System That Can't Lie About Itself",
+    "date": "2026-06-24",
+    "excerpt": "Three weeks ago I called vibe-coded software a liability. This is the counter-proof — a multi-store retail platform AI wrote most of, built so its permissions, its documentation, and its money can't silently drift from reality. Including an honest account of what's still broken."
+  },
+  {
+    "slug": "the-balcony-pattern",
+    "title": "The Balcony Pattern: Building Deterministic Software With a Non-Deterministic Companion",
+    "date": "2026-06-15",
+    "excerpt": "Notes from building Piper — a voice layer that turned into a study of how humans and dumb-but-useful models actually collaborate. The deterministic layer's job is to hold the non-deterministic layer accountable to ground truth."
+  },
+  {
+    "slug": "design-patterns",
+    "title": "Design Patterns in Dart",
+    "date": "2026-06-10",
+    "excerpt": "All 23 Gang of Four patterns in Dart. For each one — what was going wrong, what the pattern fixes, and a minimal, runnable example. The wrong-way snippets are real patterns of pain, not strawmen."
+  },
+  {
+    "slug": "certificates-the-new-templates",
+    "title": "On Agile, AI, and the One Engineering Problem That Refuses to Die",
+    "date": "2026-05-31",
+    "excerpt": "The problem is whether the humans who can reason in a particular way are producing more humans who can reason the same way — or whether they are stepping into architectural roles, encoding their judgment, and quietly taking the generative structure of that judgment with them."
+  },
+  {
+    "slug": "navigating-ai-slop-for-vive-coders",
+    "title": "From Vibe Coder to Software Engineer: The Hill You Need to Climb",
+    "date": "2026-05-30",
+    "excerpt": "Vibe coding isn't the enemy. Vibe coding \"without architecture\" is the enemy."
+  },
+  {
+    "slug": "building-a-rag-pipeline",
+    "title": "The RAG System That Refuses to Hallucinate",
+    "date": "2026-05-20",
+    "excerpt": "I built a RAG system and tried to break it. I asked questions with no answers, injected false premises, demanded geography from a story that never named a country. It refused — gracefully, with citations. A journal entry about constraint-aware synthesis."
+  },
+  {
+    "slug": "payment-system-architecture-for-multi-module-platforms",
+    "title": "Payment System Architecture for Multi-Module Platforms",
+    "date": "2026-04-09",
+    "excerpt": "When multiple booking modules share a platform, payment cannot live inside any one of them. It must be extracted, made generic, and governed by a single contract. Here is how."
+  },
+  {
+    "slug": "thesis",
+    "title": "\"Staging Intelligence: A Dramaturgical Framework for Designing Edge-Native Agentic Systems\"",
+    "date": "2026-04-08",
+    "excerpt": "\"Agent systems are better understood as staged plays — with worlds, characters, acts, and controlled improvisation — than as traditional workflows. The Lead's master's thesis.\""
+  },
+  {
+    "slug": "domain-modeling-is-not-diagramming",
+    "title": "Domain Modeling Is Not Diagramming",
+    "date": "2026-04-02",
+    "excerpt": "Most teams confuse domain modeling with drawing boxes and arrows. A domain model is not a diagram — it is an understanding."
+  }
+]
