@@ -1,5 +1,17 @@
 [
   {
+    "slug": "the-graduation",
+    "title": "The RAG System That Finally Stopped Writing Code It Already Built",
+    "date": "2026-07-23",
+    "excerpt": "I built a RAG system that refuses to hallucinate and another that refuses to go stale. Then I looked at the stack and realized I was about to write eighty percent of a framework that already exists. The engine was never the product. A journal entry about graduating the POC."
+  },
+  {
+    "slug": "one-pattern-every-vibe-coder-should-know",
+    "title": "One Pattern Every Vibe Coder Should Know: Stop Duplicate Writes",
+    "date": "2026-07-12",
+    "excerpt": "You're building the whole stack and most of it works — until two requests arrive in the same millisecond. The thing that breaks first is concurrency. Here's the one pattern that fixes it, and the exact keywords to drop into your prompt so your agent writes it for you."
+  },
+  {
     "slug": "the-second-loop-closes",
     "title": "The Second Loop Closes: When the Observed Talks Back",
     "date": "2026-07-03",
