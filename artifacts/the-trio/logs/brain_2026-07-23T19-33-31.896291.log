@@ -1,0 +1,13 @@
+2026-07-23 19:33:31.899800 [INFO] second_brain: Logger initialized
+2026-07-23 19:33:31.900848 [INFO] second_brain: Second Brain CLI - A Spinozan approach to distributed cognition
+2026-07-23 19:33:31.900941 [INFO] second_brain: Initializing from project root: /Users/ajaydahal/Downloads/Attached-Assets/artifacts/the-trio
+2026-07-23 19:33:31.901107 [INFO] second_brain: Performing health checks...
+2026-07-23 19:33:31.901929 [FINE] second_brain: Checking Ollama server connectivity...
+2026-07-23 19:33:31.913208 [FINE] second_brain: Checking ChromaDB server connectivity...
+2026-07-23 19:33:31.932628 [INFO] second_brain: Health check results:
+2026-07-23 19:33:31.933272 [SEVERE] second_brain:   ✗ ChromaDB: ChromaDB connectivity failed: ClientException with SocketException: Connection refused (OS Error: Connection refused, errno = 61), address = localhost, port = 59593, uri=http://localhost:8000/api/v2/heartbeat
+2026-07-23 19:33:31.933519 [SEVERE] second_brain:     Suggestion: Install and start ChromaDB. Visit: https://docs.trychroma.com/getting-started
+2026-07-23 19:33:31.933626 [SEVERE] second_brain:   ✗ Ollama: Ollama connectivity failed: ClientException with SocketException: Connection refused (OS Error: Connection refused, errno = 61), address = localhost, port = 59592, uri=http://localhost:11434/api/tags
+2026-07-23 19:33:31.933715 [SEVERE] second_brain:     Suggestion: Ensure Ollama is installed and running. Visit: https://ollama.ai
+2026-07-23 19:33:31.934184 [SEVERE] second_brain: Health checks failed
+2026-07-23 19:33:31.934291 [SEVERE] second_brain: CLI initialization failed

@@ -30,10 +30,6 @@ interface Category {
   projects: Project[];
 }
 
-const membersWithPortfolio = content.trio.members.filter(
-  (m: any) => m.page?.portfolio && m.page.portfolio.length > 0
-);
-
 function ProjectCard({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false);
   const hasImage = !!project.imageUrl;
@@ -345,63 +341,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Per-member portfolios */}
-      {membersWithPortfolio.map((member: any) => (
-        <section
-          key={member.id}
-          style={{
-            paddingTop: "80px",
-            paddingBottom: "80px",
-            paddingLeft: PAD,
-            paddingRight: PAD,
-            background: S.bgSurface,
-            borderTop: `1px solid ${S.bgBorder}`,
-          }}
-        >
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <ScrollReveal>
-              <p
-                style={{
-                  fontFamily: S.mono,
-                  fontSize: "11px",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: S.accent,
-                  marginBottom: "12px",
-                }}
-              >
-                {member.role}
-              </p>
-              <h3
-                style={{
-                  fontFamily: S.serif,
-                  fontSize: "clamp(24px, 3vw, 36px)",
-                  lineHeight: 1.15,
-                  color: S.textPrimary,
-                  marginBottom: "48px",
-                }}
-              >
-                {member.title}'s builds.
-              </h3>
-            </ScrollReveal>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "24px",
-              }}
-              className="portfolio-member-grid"
-            >
-              {member.page.portfolio.map((project: Project, i: number) => (
-                <ScrollReveal key={project.title} delay={i * 0.06}>
-                  <ProjectCard project={project} />
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      ))}
     </PageLayout>
   );
 }

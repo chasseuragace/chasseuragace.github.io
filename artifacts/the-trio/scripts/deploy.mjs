@@ -46,7 +46,7 @@ try {
   }
 
   // Step 3.5: Generate an SPA 404 fallback by copying the built index.html
-  // to 404.html. This lets client-side routes (e.g. /the-apprentice) serve
+  // to 404.html. This lets client-side routes (e.g. /the-lead) serve
   // the app directly instead of flashing the "Redirecting..." page.
   fs.copyFileSync(
     path.join(distPath, "index.html"),

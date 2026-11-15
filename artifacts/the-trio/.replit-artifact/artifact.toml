@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "The Trio"
+title = "The Lead"
 version = "1.0.0"
 id = "artifacts/the-trio"
 router = "path"

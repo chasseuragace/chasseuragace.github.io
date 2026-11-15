@@ -647,8 +647,9 @@ function ClosingSection({ page }: { page: Page }) {
 }
 
 export default function MemberPage() {
-  const { memberId } = useParams<{ memberId: string }>();
-  const member = content.trio.members.find((m) => m.id === memberId);
+  const { memberId } = useParams<{ memberId?: string }>();
+  const resolvedMemberId = memberId ?? "the-lead";
+  const member = content.trio.members.find((m) => m.id === resolvedMemberId);
 
   if (!member || !member.page) {
     return (

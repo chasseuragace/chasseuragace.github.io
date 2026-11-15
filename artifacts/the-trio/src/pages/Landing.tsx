@@ -539,6 +539,8 @@ function SystemSection() {
 }
 
 function TrioSection({ onBookClick }: { onBookClick: () => void }) {
+  const isSingleMember = content.trio.members.length === 1;
+
   return (
     <section
       style={{
@@ -567,7 +569,16 @@ function TrioSection({ onBookClick }: { onBookClick: () => void }) {
           </h2>
         </ScrollReveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginBottom: "56px" }} className="trio-grid">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: isSingleMember ? "minmax(0, 760px)" : "repeat(3, 1fr)",
+            justifyContent: isSingleMember ? "center" : "unset",
+            gap: "24px",
+            marginBottom: "56px",
+          }}
+          className="trio-grid"
+        >
           {content.trio.members.map((member, i) => (
             <ScrollReveal key={member.role} delay={i * 0.1}>
               <MemberCard member={member} />

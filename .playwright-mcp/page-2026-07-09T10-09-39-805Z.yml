@@ -1,0 +1,164 @@
+- generic [ref=f1e3]:
+  - navigation [ref=f1e4]:
+    - link "TRIO" [ref=f1e5] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f1e6]:
+      - link "THE LEAD" [ref=f1e7] [cursor=pointer]:
+        - /url: /the-lead
+      - link "THE APPRENTICE" [ref=f1e8] [cursor=pointer]:
+        - /url: /the-apprentice
+      - link "THE BRUTE" [ref=f1e9] [cursor=pointer]:
+        - /url: /the-brute
+      - link "PORTFOLIO" [ref=f1e10] [cursor=pointer]:
+        - /url: /portfolio
+      - link "QUERIES" [ref=f1e11] [cursor=pointer]:
+        - /url: /queries
+      - button "Book a Session →" [ref=f1e12] [cursor=pointer]
+  - main [ref=f1e13]:
+    - generic [ref=f1e15]:
+      - paragraph [ref=f1e16]: The Lead
+      - heading "System Architect" [level=1] [ref=f1e17]
+      - paragraph [ref=f1e19]: Thinks in systems before he thinks in code. The primary knowledge cruncher in every intake session.
+      - generic [ref=f1e20]:
+        - generic [ref=f1e21]: Domain Modeling
+        - generic [ref=f1e22]: Architecture
+        - generic [ref=f1e23]: Philosophy
+    - generic [ref=f1e25]:
+      - generic [ref=f1e26]:
+        - paragraph [ref=f1e27]: Philosophy
+        - heading "Conceptual integrity above all else." [level=2] [ref=f1e28]:
+          - generic [ref=f1e29]: Conceptual integrity
+          - generic [ref=f1e30]: above all else.
+      - generic [ref=f1e31]:
+        - generic [ref=f1e32]:
+          - paragraph [ref=f1e34]: Thinks in systems before he thinks in code. The Lead's role is conceptual integrity — ensuring that what gets built reflects reality accurately, not just what the client requested.
+          - paragraph [ref=f1e36]: "He is the primary knowledge cruncher in every intake session. The one who, by the session's end, can say with confidence: this is what you need, and this is why."
+        - generic [ref=f1e38]:
+          - paragraph [ref=f1e39]: “The requirement is always a hypothesis — often a good one, rarely the final answer.”
+          - paragraph [ref=f1e40]: The Lead doesn't take requirements at face value. Every intake session is domain research — a structured excavation of what actually needs to exist.
+    - generic [ref=f1e42]:
+      - generic [ref=f1e43]:
+        - paragraph [ref=f1e44]: Operating Principles
+        - heading "How the Lead approaches every engagement." [level=2] [ref=f1e45]:
+          - generic [ref=f1e46]: How the Lead
+          - generic [ref=f1e47]: approaches every engagement.
+      - generic [ref=f1e48]:
+        - generic [ref=f1e50]:
+          - paragraph [ref=f1e51]: "01"
+          - heading "Domain First" [level=3] [ref=f1e52]
+          - paragraph [ref=f1e53]: Before any architecture decision, understand the domain deeply. Software that reflects the domain accurately is software that works.
+        - generic [ref=f1e55]:
+          - paragraph [ref=f1e56]: "02"
+          - heading "Conceptual Integrity" [level=3] [ref=f1e57]
+          - paragraph [ref=f1e58]: A system designed by one mind — or a small, aligned group — will be coherent. Coherent systems are maintainable, explainable, and trusted.
+        - generic [ref=f1e60]:
+          - paragraph [ref=f1e61]: "03"
+          - heading "Prescribe, Don't Transcribe" [level=3] [ref=f1e62]
+          - paragraph [ref=f1e63]: The client knows their domain. They don't know the solution space. The Lead's role is to prescribe what should be built — and articulate why.
+        - generic [ref=f1e65]:
+          - paragraph [ref=f1e66]: "04"
+          - heading "Knowledge Crunching" [level=3] [ref=f1e67]
+          - paragraph [ref=f1e68]: Every conversation is an opportunity to refine the model. The domain model isn't a diagram — it's a living understanding that improves with every session.
+    - generic [ref=f1e70]:
+      - generic [ref=f1e71]:
+        - paragraph [ref=f1e72]: Role in the Trio
+        - heading "The thinking layer of every engagement." [level=2] [ref=f1e73]:
+          - generic [ref=f1e74]: The thinking layer
+          - generic [ref=f1e75]: of every engagement.
+      - generic [ref=f1e77]:
+        - generic [ref=f1e79]:
+          - heading "Before the Session" [level=3] [ref=f1e81]
+          - paragraph [ref=f1e82]: The system prepares a domain briefing. The Lead reviews it, identifies gaps, and formulates the questions that will drive the conversation.
+        - generic [ref=f1e84]:
+          - heading "During the Session" [level=3] [ref=f1e86]
+          - paragraph [ref=f1e87]: The Lead is the primary listener and questioner. Every answer is processed through the lens of domain modeling — what entities exist, what relationships matter, what the real constraints are.
+        - generic [ref=f1e89]:
+          - heading "After the Session" [level=3] [ref=f1e91]
+          - paragraph [ref=f1e92]: The domain model is refined. The Lead hands a clear architectural direction to the Apprentice, who ensures it survives implementation. The Brute builds it.
+    - generic [ref=f1e94]:
+      - generic [ref=f1e95]:
+        - paragraph [ref=f1e96]: Writing
+        - heading "From the Lead's notebook." [level=2] [ref=f1e97]:
+          - generic [ref=f1e98]: From the Lead's
+          - generic [ref=f1e99]: notebook.
+      - generic [ref=f1e100]:
+        - 'link "The Second Loop Closes: When the Observed Talks Back The sequel to the Balcony Pattern. The observer used to fire verdicts into the void and never learn if it was right. Closing that loop meant designing a protocol between minds of unequal ability — and discovering that the schema is a prompt, feedback must inform but never override, and a loop that labels its own output can start to grade itself. Jul 3, 2026" [ref=f1e102] [cursor=pointer]':
+          - /url: /the-lead/blog/the-second-loop-closes
+          - generic [ref=f1e103]:
+            - generic [ref=f1e104]:
+              - 'heading "The Second Loop Closes: When the Observed Talks Back" [level=3] [ref=f1e105]'
+              - paragraph [ref=f1e106]: The sequel to the Balcony Pattern. The observer used to fire verdicts into the void and never learn if it was right. Closing that loop meant designing a protocol between minds of unequal ability — and discovering that the schema is a prompt, feedback must inform but never override, and a loop that labels its own output can start to grade itself.
+            - generic [ref=f1e107]: Jul 3, 2026
+        - link "The RAG System That Refuses to Go Stale Last month I built a RAG system that refuses to hallucinate. Then a simpler question broke my own design — what happens when a client has a hundred documents and forty of them change every day? \"Clear and rebuild\" doesn't survive contact with that. A journal entry about the slower kind of lie. Jun 25, 2026" [ref=f1e109] [cursor=pointer]:
+          - /url: /the-lead/blog/rag-system-refuses-to-go-stale
+          - generic [ref=f1e110]:
+            - generic [ref=f1e111]:
+              - heading "The RAG System That Refuses to Go Stale" [level=3] [ref=f1e112]
+              - paragraph [ref=f1e113]: Last month I built a RAG system that refuses to hallucinate. Then a simpler question broke my own design — what happens when a client has a hundred documents and forty of them change every day? "Clear and rebuild" doesn't survive contact with that. A journal entry about the slower kind of lie.
+            - generic [ref=f1e114]: Jun 25, 2026
+        - 'link "Governance as a Feature: The Retail System That Can''t Lie About Itself Three weeks ago I called vibe-coded software a liability. This is the counter-proof — a multi-store retail platform AI wrote most of, built so its permissions, its documentation, and its money can''t silently drift from reality. Including an honest account of what''s still broken. Jun 24, 2026" [ref=f1e116] [cursor=pointer]':
+          - /url: /the-lead/blog/governance-as-a-feature
+          - generic [ref=f1e117]:
+            - generic [ref=f1e118]:
+              - 'heading "Governance as a Feature: The Retail System That Can''t Lie About Itself" [level=3] [ref=f1e119]'
+              - paragraph [ref=f1e120]: Three weeks ago I called vibe-coded software a liability. This is the counter-proof — a multi-store retail platform AI wrote most of, built so its permissions, its documentation, and its money can't silently drift from reality. Including an honest account of what's still broken.
+            - generic [ref=f1e121]: Jun 24, 2026
+        - 'link "The Balcony Pattern: Building Deterministic Software With a Non-Deterministic Companion Notes from building Piper — a voice layer that turned into a study of how humans and dumb-but-useful models actually collaborate. The deterministic layer''s job is to hold the non-deterministic layer accountable to ground truth. Jun 15, 2026" [ref=f1e123] [cursor=pointer]':
+          - /url: /the-lead/blog/the-balcony-pattern
+          - generic [ref=f1e124]:
+            - generic [ref=f1e125]:
+              - 'heading "The Balcony Pattern: Building Deterministic Software With a Non-Deterministic Companion" [level=3] [ref=f1e126]'
+              - paragraph [ref=f1e127]: Notes from building Piper — a voice layer that turned into a study of how humans and dumb-but-useful models actually collaborate. The deterministic layer's job is to hold the non-deterministic layer accountable to ground truth.
+            - generic [ref=f1e128]: Jun 15, 2026
+        - link "Design Patterns in Dart All 23 Gang of Four patterns in Dart. For each one — what was going wrong, what the pattern fixes, and a minimal, runnable example. The wrong-way snippets are real patterns of pain, not strawmen. Jun 10, 2026" [ref=f1e130] [cursor=pointer]:
+          - /url: /the-lead/blog/design-patterns
+          - generic [ref=f1e131]:
+            - generic [ref=f1e132]:
+              - heading "Design Patterns in Dart" [level=3] [ref=f1e133]
+              - paragraph [ref=f1e134]: All 23 Gang of Four patterns in Dart. For each one — what was going wrong, what the pattern fixes, and a minimal, runnable example. The wrong-way snippets are real patterns of pain, not strawmen.
+            - generic [ref=f1e135]: Jun 10, 2026
+        - link "On Agile, AI, and the One Engineering Problem That Refuses to Die The problem is whether the humans who can reason in a particular way are producing more humans who can reason the same way — or whether they are stepping into architectural roles, encoding their judgment, and quietly taking the generative structure of that judgment with them. May 31, 2026" [ref=f1e137] [cursor=pointer]:
+          - /url: /the-lead/blog/certificates-the-new-templates
+          - generic [ref=f1e138]:
+            - generic [ref=f1e139]:
+              - heading "On Agile, AI, and the One Engineering Problem That Refuses to Die" [level=3] [ref=f1e140]
+              - paragraph [ref=f1e141]: The problem is whether the humans who can reason in a particular way are producing more humans who can reason the same way — or whether they are stepping into architectural roles, encoding their judgment, and quietly taking the generative structure of that judgment with them.
+            - generic [ref=f1e142]: May 31, 2026
+        - 'link "From Vibe Coder to Software Engineer: The Hill You Need to Climb Vibe coding isn''t the enemy. Vibe coding \"without architecture\" is the enemy. May 30, 2026" [ref=f1e144] [cursor=pointer]':
+          - /url: /the-lead/blog/navigating-ai-slop-for-vive-coders
+          - generic [ref=f1e145]:
+            - generic [ref=f1e146]:
+              - 'heading "From Vibe Coder to Software Engineer: The Hill You Need to Climb" [level=3] [ref=f1e147]'
+              - paragraph [ref=f1e148]: Vibe coding isn't the enemy. Vibe coding "without architecture" is the enemy.
+            - generic [ref=f1e149]: May 30, 2026
+        - link "The RAG System That Refuses to Hallucinate I built a RAG system and tried to break it. I asked questions with no answers, injected false premises, demanded geography from a story that never named a country. It refused — gracefully, with citations. A journal entry about constraint-aware synthesis. May 20, 2026" [ref=f1e151] [cursor=pointer]:
+          - /url: /the-lead/blog/building-a-rag-pipeline
+          - generic [ref=f1e152]:
+            - generic [ref=f1e153]:
+              - heading "The RAG System That Refuses to Hallucinate" [level=3] [ref=f1e154]
+              - paragraph [ref=f1e155]: I built a RAG system and tried to break it. I asked questions with no answers, injected false premises, demanded geography from a story that never named a country. It refused — gracefully, with citations. A journal entry about constraint-aware synthesis.
+            - generic [ref=f1e156]: May 20, 2026
+        - link "Payment System Architecture for Multi-Module Platforms When multiple booking modules share a platform, payment cannot live inside any one of them. It must be extracted, made generic, and governed by a single contract. Here is how. Apr 9, 2026" [ref=f1e158] [cursor=pointer]:
+          - /url: /the-lead/blog/payment-system-architecture-for-multi-module-platforms
+          - generic [ref=f1e159]:
+            - generic [ref=f1e160]:
+              - heading "Payment System Architecture for Multi-Module Platforms" [level=3] [ref=f1e161]
+              - paragraph [ref=f1e162]: When multiple booking modules share a platform, payment cannot live inside any one of them. It must be extracted, made generic, and governed by a single contract. Here is how.
+            - generic [ref=f1e163]: Apr 9, 2026
+        - 'link "\"Staging Intelligence: A Dramaturgical Framework for Designing Edge-Native Agentic Systems\" \"Agent systems are better understood as staged plays — with worlds, characters, acts, and controlled improvisation — than as traditional workflows. The Lead''s master''s thesis.\" Apr 8, 2026" [ref=f1e165] [cursor=pointer]':
+          - /url: /the-lead/blog/thesis
+          - generic [ref=f1e166]:
+            - generic [ref=f1e167]:
+              - 'heading "\"Staging Intelligence: A Dramaturgical Framework for Designing Edge-Native Agentic Systems\"" [level=3] [ref=f1e168]'
+              - paragraph [ref=f1e169]: "\"Agent systems are better understood as staged plays — with worlds, characters, acts, and controlled improvisation — than as traditional workflows. The Lead's master's thesis.\""
+            - generic [ref=f1e170]: Apr 8, 2026
+        - link "Domain Modeling Is Not Diagramming Most teams confuse domain modeling with drawing boxes and arrows. A domain model is not a diagram — it is an understanding. Apr 2, 2026" [ref=f1e172] [cursor=pointer]:
+          - /url: /the-lead/blog/domain-modeling-is-not-diagramming
+          - generic [ref=f1e173]:
+            - generic [ref=f1e174]:
+              - heading "Domain Modeling Is Not Diagramming" [level=3] [ref=f1e175]
+              - paragraph [ref=f1e176]: Most teams confuse domain modeling with drawing boxes and arrows. A domain model is not a diagram — it is an understanding.
+            - generic [ref=f1e177]: Apr 2, 2026
+    - generic [ref=f1e179]:
+      - paragraph [ref=f1e180]: “This is what you need, and this is why.”
+      - paragraph [ref=f1e181]: — The Lead, at the end of every intake session

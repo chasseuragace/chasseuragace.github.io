@@ -44,11 +44,11 @@ The developer — or in our case, the Lead — should become a temporary domain 
 
 That single question, explored fully, reveals more about the domain than a 40-page requirements document. It surfaces the real entities (`Order`, `Fulfillment`, `Cancellation`), the real invariants (can you cancel a fulfilled item?), and the real edge cases (partial fulfillment, refund timing, inventory return).
 
-## The Trio's Approach
+## The Lead's Approach
 
 In every intake session, the Lead's job is not to gather requirements. It is to **become competent in the client's domain** — fast enough that the model emerges from the conversation, not from a specification.
 
-The model is then handed to the Apprentice, who ensures it survives contact with code. The Brute builds it.
+The model then becomes the product direction: clear enough to structure the build, guide the decisions, and keep the implementation anchored to reality.
 
 But it starts with understanding. Always.
 
