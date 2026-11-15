@@ -6,7 +6,7 @@ excerpt: A café website does not need to be an expensive, months-long project. 
 
 # The Quiet Cost of Not Having a Website
 
-**Published:** November 15, 2026<br />
+**Published:** November 15, 2026\\
 **From the Lead's notebook**
 
 ---
